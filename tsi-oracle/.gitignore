@@ -33,6 +33,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# cached API data
+data/raw/
+
 # vercel
 .vercel
 
