@@ -1,0 +1,122 @@
+[
+  {
+    "id": "Arsenal",
+    "name": "Arsenal",
+    "league": "ENG",
+    "leagueName": "Premier League",
+    "elo": 2052.35,
+    "tsiDisplay": 845,
+    "rank": 1,
+    "change7d": -2,
+    "changePercent7d": -0.2,
+    "tsiDisplay7dAgo": 847
+  },
+  {
+    "id": "Bayern",
+    "name": "Bayern Munich",
+    "league": "GER",
+    "leagueName": "Bundesliga",
+    "elo": 1996.35,
+    "tsiDisplay": 774,
+    "rank": 2,
+    "change7d": 4,
+    "changePercent7d": 0.5,
+    "tsiDisplay7dAgo": 770
+  },
+  {
+    "id": "ManCity",
+    "name": "Manchester City",
+    "league": "ENG",
+    "leagueName": "Premier League",
+    "elo": 1982.9,
+    "tsiDisplay": 754,
+    "rank": 3,
+    "change7d": -15,
+    "changePercent7d": -2,
+    "tsiDisplay7dAgo": 769
+  },
+  {
+    "id": "ParisSG",
+    "name": "Paris Saint-Germain",
+    "league": "FRA",
+    "leagueName": "Ligue 1",
+    "elo": 1968.62,
+    "tsiDisplay": 731,
+    "rank": 4,
+    "change7d": 1,
+    "changePercent7d": 0.1,
+    "tsiDisplay7dAgo": 730
+  },
+  {
+    "id": "Barcelona",
+    "name": "Barcelona",
+    "league": "ESP",
+    "leagueName": "La Liga",
+    "elo": 1949.33,
+    "tsiDisplay": 699,
+    "rank": 5,
+    "change7d": 8,
+    "changePercent7d": 1.2,
+    "tsiDisplay7dAgo": 691
+  },
+  {
+    "id": "Liverpool",
+    "name": "Liverpool",
+    "league": "ENG",
+    "leagueName": "Premier League",
+    "elo": 1940.72,
+    "tsiDisplay": 684,
+    "rank": 6,
+    "change7d": 5,
+    "changePercent7d": 0.7,
+    "tsiDisplay7dAgo": 679
+  },
+  {
+    "id": "Inter",
+    "name": "Inter Milan",
+    "league": "ITA",
+    "leagueName": "Serie A",
+    "elo": 1926.48,
+    "tsiDisplay": 658,
+    "rank": 7,
+    "change7d": 7,
+    "changePercent7d": 1.1,
+    "tsiDisplay7dAgo": 651
+  },
+  {
+    "id": "AstonVilla",
+    "name": "Aston Villa",
+    "league": "ENG",
+    "leagueName": "Premier League",
+    "elo": 1923.92,
+    "tsiDisplay": 653,
+    "rank": 8,
+    "change7d": 5,
+    "changePercent7d": 0.8,
+    "tsiDisplay7dAgo": 648
+  },
+  {
+    "id": "RealMadrid",
+    "name": "Real Madrid",
+    "league": "ESP",
+    "leagueName": "La Liga",
+    "elo": 1916.72,
+    "tsiDisplay": 639,
+    "rank": 9,
+    "change7d": 13,
+    "changePercent7d": 2.1,
+    "tsiDisplay7dAgo": 626
+  },
+  {
+    "id": "Chelsea",
+    "name": "Chelsea",
+    "league": "ENG",
+    "leagueName": "Premier League",
+    "elo": 1882.61,
+    "tsiDisplay": 572,
+    "rank": 10,
+    "change7d": -9,
+    "changePercent7d": -1.5,
+    "tsiDisplay7dAgo": 581
+  }
+]
