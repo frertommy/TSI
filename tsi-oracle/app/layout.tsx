@@ -3,7 +3,12 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'TSI Oracle — Team Strength Index',
-  description: 'Elo-based ratings for top European football clubs. Financial-grade team analytics powered by ClubElo data.',
+  description: 'Elo-based team strength ratings for top European football clubs. Powered by ClubElo data.',
+  openGraph: {
+    title: 'TSI Oracle — Team Strength Index',
+    description: 'Elo-based team strength ratings for top European football clubs.',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({

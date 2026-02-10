@@ -43,8 +43,8 @@ export async function GET() {
       leagueMap.get(t.league)!.teams.push({
         id: t.id,
         name: t.name,
-        tsiDisplay: t.current_tsi_display,
-        rank: t.current_rank,
+        tsiDisplay: Number(t.current_tsi_display),
+        rank: Number(t.current_rank),
       });
     }
 
