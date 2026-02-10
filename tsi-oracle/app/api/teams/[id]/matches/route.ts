@@ -1,6 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
+interface MatchRow {
+  date: string;
+  home_team_id: string;
+  home_team_name: string;
+  away_team_id: string;
+  away_team_name: string;
+  home_goals: number;
+  away_goals: number;
+  league: string;
+  season: string;
+}
+
 const CACHE_HEADERS = {
   'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
 };
@@ -42,7 +54,7 @@ export async function GET(
 
     // Combine and sort
     const allMatches = [
-      ...(homeMatches ?? []).map(m => ({
+      ...((homeMatches ?? []) as MatchRow[]).map((m) => ({
         date: m.date,
         opponent: m.away_team_name,
         isHome: true,
@@ -50,7 +62,7 @@ export async function GET(
         goalsAgainst: m.away_goals,
         result: m.home_goals > m.away_goals ? 'W' : m.home_goals < m.away_goals ? 'L' : 'D',
       })),
-      ...(awayMatches ?? []).map(m => ({
+      ...((awayMatches ?? []) as MatchRow[]).map((m) => ({
         date: m.date,
         opponent: m.home_team_name,
         isHome: false,

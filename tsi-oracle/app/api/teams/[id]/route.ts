@@ -1,6 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
+interface HistoryRow {
+  date: string;
+  elo: number;
+  tsi_display: number;
+}
+
+interface TeamRow {
+  id: string;
+  name: string;
+  league: string;
+  league_name: string;
+  current_elo: number;
+  current_tsi_display: number;
+  current_rank: number;
+  change_7d: number;
+  change_percent_7d: number;
+  updated_at: string;
+}
+
 const CACHE_HEADERS = {
   'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
 };
@@ -42,7 +61,7 @@ export async function GET(
     }
 
     // Compute stats from history
-    const historyPoints = history ?? [];
+    const historyPoints = (history ?? []) as HistoryRow[];
     let peakElo = 0;
     let peakDate = '';
     let lowestElo = Infinity;

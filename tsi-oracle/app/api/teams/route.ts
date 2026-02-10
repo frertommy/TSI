@@ -1,6 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
+interface TeamRow {
+  id: string;
+  name: string;
+  league: string;
+  league_name: string;
+  current_elo: number;
+  current_tsi_display: number;
+  current_rank: number;
+  change_7d: number;
+  change_percent_7d: number;
+  updated_at: string;
+}
+
 const CACHE_HEADERS = {
   'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
 };
@@ -21,12 +34,12 @@ export async function GET(request: NextRequest) {
       query = query.eq('league', league.toUpperCase());
     }
 
-    const { data: teams, error } = await query;
+    const { data, error } = await query;
+    const teams = (data ?? []) as TeamRow[];
 
     if (error) {
       return NextResponse.json({ error: 'Database error' }, { status: 500 });
     }
-
     // Get total count
     let countQuery = supabase
       .from('teams')
@@ -39,15 +52,15 @@ export async function GET(request: NextRequest) {
     const { count } = await countQuery;
 
     // Find the most recent updated_at
-    const latestUpdate = teams && teams.length > 0
-      ? teams.reduce((latest, t) =>
+    const latestUpdate = teams.length > 0
+      ? teams.reduce((latest: string, t) =>
           t.updated_at > latest ? t.updated_at : latest,
           teams[0].updated_at
         )
       : null;
 
     const response = {
-      teams: (teams ?? []).map(t => ({
+      teams: teams.map(t => ({
         id: t.id,
         name: t.name,
         league: t.league,

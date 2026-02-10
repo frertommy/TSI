@@ -1,6 +1,15 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
+interface TeamRow {
+  id: string;
+  name: string;
+  league: string;
+  league_name: string;
+  current_tsi_display: number;
+  current_rank: number;
+}
+
 const CACHE_HEADERS = {
   'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
 };
@@ -23,7 +32,7 @@ export async function GET() {
       teams: { id: string; name: string; tsiDisplay: number; rank: number }[];
     }>();
 
-    for (const t of teams ?? []) {
+    for (const t of (teams ?? []) as TeamRow[]) {
       if (!leagueMap.has(t.league)) {
         leagueMap.set(t.league, {
           code: t.league,
