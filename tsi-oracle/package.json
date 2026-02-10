@@ -14,7 +14,8 @@
     "seed:legacy": "npx tsx scripts/seed.ts",
     "seed:fetch-only": "npx tsx scripts/fetchMatches.ts",
     "validate": "npx tsx scripts/validate.ts",
-    "seed:supabase": "npx tsx scripts/seedSupabase.ts"
+    "seed:supabase": "npx tsx scripts/seedSupabase.ts",
+    "seed:cloud": "npx tsx scripts/seedSupabaseCloud.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.95.3",
