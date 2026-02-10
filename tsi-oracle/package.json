@@ -28,7 +28,8 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "recharts": "^3.7.0",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "undici": "^7.21.0"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",

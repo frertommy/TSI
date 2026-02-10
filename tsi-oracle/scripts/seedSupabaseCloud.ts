@@ -13,6 +13,9 @@
  * Usage: npx tsx scripts/seedSupabaseCloud.ts
  */
 
+// Configure proxy BEFORE any network imports
+import '../lib/proxySetup';
+
 import 'dotenv/config';
 import { resolve } from 'path';
 import { readFileSync } from 'fs';
