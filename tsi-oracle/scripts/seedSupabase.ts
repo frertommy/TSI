@@ -1,37 +1,22 @@
 /**
- * seedSupabase.ts — Seed Supabase with TSI data from local JSON files.
+ * seedSupabase.ts — Seed local PostgreSQL with TSI data from local JSON files.
  *
  * Steps:
- *   1. Run migrations (CREATE TABLE IF NOT EXISTS)
+ *   1. Verify tables exist (migration should already be applied)
  *   2. Upsert teams from data/tsi_current.json
  *   3. Bulk insert tsi_daily from data/tsi_history.json
  *   4. Insert matches from data/raw/*.json (if available)
  *
- * Uses the admin client (service role key) to bypass RLS.
+ * Uses the pg-backed Supabase-compatible client.
  * Idempotent — safe to re-run.
  */
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { createClient } from '@supabase/supabase-js';
-import * as dotenv from 'dotenv';
-
-// Load .env.local for the seed script (tsx doesn't auto-load it)
-dotenv.config({ path: path.resolve(__dirname, '..', '.env.local') });
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-if (!supabaseUrl || !serviceRoleKey) {
-  console.error('Missing NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY in .env.local');
-  process.exit(1);
-}
-
-const supabaseAdmin = createClient(supabaseUrl, serviceRoleKey);
+import { supabase } from '../lib/supabase';
 
 const DATA_DIR = path.resolve(__dirname, '..', 'data');
 const RAW_DIR = path.join(DATA_DIR, 'raw');
-const MIGRATION_FILE = path.resolve(__dirname, '..', 'supabase', 'migrations', '001_initial.sql');
 
 // ─── Helpers ──────────────────────────────────────────────────────────
 
@@ -44,73 +29,31 @@ function formatNumber(n: number): string {
   return n.toLocaleString('en-US');
 }
 
-// ─── Step 1: Run migration ───────────────────────────────────────────
+// ─── Step 1: Verify tables ──────────────────────────────────────────
 
-async function runMigration() {
-  console.log('Running migration...');
-  const sql = fs.readFileSync(MIGRATION_FILE, 'utf8');
+async function verifyTables() {
+  console.log('Verifying tables...');
 
-  // Split on semicolons but keep DO $$ blocks together
-  // Use rpc to run raw SQL via Supabase
-  const { error } = await supabaseAdmin.rpc('exec_sql', { query: sql });
-
-  if (error) {
-    // rpc may not exist — fall back to running statements individually
-    // Split carefully, handling DO $$ blocks
-    const statements = splitSqlStatements(sql);
-
-    for (const stmt of statements) {
-      const trimmed = stmt.trim();
-      if (!trimmed) continue;
-
-      // Use the Supabase REST endpoint for raw SQL via postgrest
-      // Actually, use supabase-js .from() won't work for DDL.
-      // We'll rely on the SQL being run manually or via the Supabase dashboard.
-      // For now, just log and continue — the tables may already exist.
-    }
-
-    console.log('  Note: Could not run migration via RPC.');
-    console.log('  Please run supabase/migrations/001_initial.sql in the Supabase SQL Editor.');
-    console.log('  Continuing with seed (tables may already exist)...');
-  } else {
-    console.log('  Migration applied ✓');
-  }
-}
-
-function splitSqlStatements(sql: string): string[] {
-  // Naive split that keeps DO $$ blocks together
-  const results: string[] = [];
-  let current = '';
-  let inDollarBlock = false;
-
-  for (const line of sql.split('\n')) {
-    if (line.includes('DO $$') || line.includes('DO $')) {
-      inDollarBlock = true;
-    }
-    if (inDollarBlock && line.includes('$$;')) {
-      current += line + '\n';
-      results.push(current);
-      current = '';
-      inDollarBlock = false;
-      continue;
-    }
-    if (inDollarBlock) {
-      current += line + '\n';
-      continue;
-    }
-
-    current += line + '\n';
-    if (line.trimEnd().endsWith(';')) {
-      results.push(current);
-      current = '';
-    }
+  const { error: teamsErr } = await supabase.from('teams').select('id').limit(1);
+  if (teamsErr) {
+    console.error('  teams table not found. Run the migration first:');
+    console.error('  psql -h 127.0.0.1 -U postgres -d tsi_oracle -f supabase/migrations/001_initial.sql');
+    process.exit(1);
   }
 
-  if (current.trim()) {
-    results.push(current);
+  const { error: dailyErr } = await supabase.from('tsi_daily').select('id').limit(1);
+  if (dailyErr) {
+    console.error('  tsi_daily table not found.');
+    process.exit(1);
   }
 
-  return results;
+  const { error: matchesErr } = await supabase.from('matches').select('id').limit(1);
+  if (matchesErr) {
+    console.error('  matches table not found.');
+    process.exit(1);
+  }
+
+  console.log('  All tables exist ✓');
 }
 
 // ─── Step 2: Seed teams ──────────────────────────────────────────────
@@ -147,7 +90,7 @@ async function seedTeams() {
     updated_at: new Date().toISOString(),
   }));
 
-  const { error } = await supabaseAdmin
+  const { error } = await supabase
     .from('teams')
     .upsert(rows, { onConflict: 'id' });
 
@@ -174,7 +117,7 @@ async function seedTsiDaily() {
     path.join(DATA_DIR, 'tsi_history.json')
   );
 
-  // Build flat array of rows
+  // Build flat array
   const allRows: { team_id: string; date: string; elo: number; tsi_display: number }[] = [];
 
   for (const [teamId, points] of Object.entries(history)) {
@@ -188,15 +131,8 @@ async function seedTsiDaily() {
     }
   }
 
-  // First, clear existing data to avoid unique constraint conflicts on re-run
-  const { error: deleteError } = await supabaseAdmin
-    .from('tsi_daily')
-    .delete()
-    .neq('id', 0); // delete all rows (Supabase requires a filter)
-
-  if (deleteError) {
-    console.log(`Warning: Could not clear tsi_daily: ${deleteError.message}`);
-  }
+  // Clear existing data for clean re-run
+  await supabase.from('tsi_daily').delete().neq('id', 0);
 
   // Insert in chunks of 500
   const CHUNK_SIZE = 500;
@@ -204,16 +140,18 @@ async function seedTsiDaily() {
 
   for (let i = 0; i < allRows.length; i += CHUNK_SIZE) {
     const chunk = allRows.slice(i, i + CHUNK_SIZE);
-    const { error } = await supabaseAdmin
-      .from('tsi_daily')
-      .insert(chunk);
+    const { error } = await supabase.from('tsi_daily').insert(chunk);
 
     if (error) {
       console.log(`\n  FAILED at chunk ${Math.floor(i / CHUNK_SIZE)}: ${error.message}`);
       throw error;
     }
-
     inserted += chunk.length;
+
+    // Progress indicator every 5000 rows
+    if (inserted % 5000 === 0) {
+      process.stdout.write(`${formatNumber(inserted)}...`);
+    }
   }
 
   console.log(`${formatNumber(inserted)} rows inserted ✓`);
@@ -224,21 +162,18 @@ async function seedTsiDaily() {
 async function seedMatches() {
   process.stdout.write('Seeding matches... ');
 
-  // Look for football-data.org cached JSON files
   if (!fs.existsSync(RAW_DIR)) {
     console.log('skipped — no data/raw/ directory');
     return;
   }
 
-  const jsonFiles = fs.readdirSync(RAW_DIR)
-    .filter(f => f.endsWith('.json'));
+  const jsonFiles = fs.readdirSync(RAW_DIR).filter(f => f.endsWith('.json'));
 
   if (jsonFiles.length === 0) {
     console.log('skipped — no match data files found');
     return;
   }
 
-  // Process match data from football-data.org format
   interface APIMatch {
     id: number;
     utcDate: string;
@@ -286,21 +221,18 @@ async function seedMatches() {
     return;
   }
 
-  // Clear existing and insert
-  await supabaseAdmin.from('matches').delete().neq('id', 0);
+  await supabase.from('matches').delete().neq('id', 0);
 
   const CHUNK_SIZE = 500;
   let inserted = 0;
 
   for (let i = 0; i < allMatches.length; i += CHUNK_SIZE) {
     const chunk = allMatches.slice(i, i + CHUNK_SIZE);
-    const { error } = await supabaseAdmin.from('matches').insert(chunk);
-
+    const { error } = await supabase.from('matches').insert(chunk);
     if (error) {
       console.log(`\n  FAILED at chunk ${Math.floor(i / CHUNK_SIZE)}: ${error.message}`);
       throw error;
     }
-
     inserted += chunk.length;
   }
 
@@ -311,11 +243,11 @@ async function seedMatches() {
 
 async function main() {
   console.log('');
-  console.log('TSI Oracle — Supabase Seed');
+  console.log('TSI Oracle — Database Seed');
   console.log('═══════════════════════════════════════════════════');
   console.log('');
 
-  await runMigration();
+  await verifyTables();
   console.log('');
   await seedTeams();
   await seedTsiDaily();

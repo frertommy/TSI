@@ -1,7 +1,4 @@
-// Server-only client for seed scripts (bypasses RLS)
-import { createClient } from '@supabase/supabase-js';
-
-export const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+// Server-only admin client — re-exports the same pg-backed client.
+// In Supabase production this would use the service role key to bypass RLS.
+// With local PostgreSQL, RLS is not enforced so both clients are equivalent.
+export { supabase as supabaseAdmin } from './supabase';
