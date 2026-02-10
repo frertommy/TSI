@@ -1,0 +1,772 @@
+[
+  {
+    "id": 328,
+    "name": "Burnley FC",
+    "shortName": "Burnley",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 65,
+    "name": "Manchester City FC",
+    "shortName": "Man City",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 57,
+    "name": "Arsenal FC",
+    "shortName": "Arsenal",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 351,
+    "name": "Nottingham Forest FC",
+    "shortName": "Nottingham",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 1044,
+    "name": "AFC Bournemouth",
+    "shortName": "Bournemouth",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 563,
+    "name": "West Ham United FC",
+    "shortName": "West Ham",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 397,
+    "name": "Brighton & Hove Albion FC",
+    "shortName": "Brighton Hove",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 389,
+    "name": "Luton Town FC",
+    "shortName": "Luton Town",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 62,
+    "name": "Everton FC",
+    "shortName": "Everton",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 63,
+    "name": "Fulham FC",
+    "shortName": "Fulham",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 356,
+    "name": "Sheffield United FC",
+    "shortName": "Sheffield Utd",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 354,
+    "name": "Crystal Palace FC",
+    "shortName": "Crystal Palace",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 67,
+    "name": "Newcastle United FC",
+    "shortName": "Newcastle",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 58,
+    "name": "Aston Villa FC",
+    "shortName": "Aston Villa",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 402,
+    "name": "Brentford FC",
+    "shortName": "Brentford",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 73,
+    "name": "Tottenham Hotspur FC",
+    "shortName": "Tottenham",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 61,
+    "name": "Chelsea FC",
+    "shortName": "Chelsea",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 64,
+    "name": "Liverpool FC",
+    "shortName": "Liverpool",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 66,
+    "name": "Manchester United FC",
+    "shortName": "Man United",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 76,
+    "name": "Wolverhampton Wanderers FC",
+    "shortName": "Wolverhampton",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 349,
+    "name": "Ipswich Town FC",
+    "shortName": "Ipswich Town",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 340,
+    "name": "Southampton FC",
+    "shortName": "Southampton",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 338,
+    "name": "Leicester City FC",
+    "shortName": "Leicester City",
+    "league": "PL",
+    "country": "England"
+  },
+  {
+    "id": 267,
+    "name": "UD Almería",
+    "shortName": "Almería",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 87,
+    "name": "Rayo Vallecano de Madrid",
+    "shortName": "Rayo Vallecano",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 559,
+    "name": "Sevilla FC",
+    "shortName": "Sevilla FC",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 95,
+    "name": "Valencia CF",
+    "shortName": "Valencia",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 92,
+    "name": "Real Sociedad de Fútbol",
+    "shortName": "Real Sociedad",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 298,
+    "name": "Girona FC",
+    "shortName": "Girona",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 275,
+    "name": "UD Las Palmas",
+    "shortName": "Las Palmas",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 89,
+    "name": "RCD Mallorca",
+    "shortName": "Mallorca",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 77,
+    "name": "Athletic Club",
+    "shortName": "Athletic",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 86,
+    "name": "Real Madrid CF",
+    "shortName": "Real Madrid",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 558,
+    "name": "RC Celta de Vigo",
+    "shortName": "Celta",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 79,
+    "name": "CA Osasuna",
+    "shortName": "Osasuna",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 94,
+    "name": "Villarreal CF",
+    "shortName": "Villarreal",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 90,
+    "name": "Real Betis Balompié",
+    "shortName": "Real Betis",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 82,
+    "name": "Getafe CF",
+    "shortName": "Getafe",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 81,
+    "name": "FC Barcelona",
+    "shortName": "Barça",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 264,
+    "name": "Cádiz CF",
+    "shortName": "Cádiz CF",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 263,
+    "name": "Deportivo Alavés",
+    "shortName": "Alavés",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 78,
+    "name": "Club Atlético de Madrid",
+    "shortName": "Atleti",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 83,
+    "name": "Granada CF",
+    "shortName": "Granada",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 745,
+    "name": "CD Leganés",
+    "shortName": "Leganés",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 250,
+    "name": "Real Valladolid CF",
+    "shortName": "Valladolid",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 80,
+    "name": "RCD Espanyol de Barcelona",
+    "shortName": "Espanyol",
+    "league": "PD",
+    "country": "Spain"
+  },
+  {
+    "id": 12,
+    "name": "SV Werder Bremen",
+    "shortName": "Bremen",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 5,
+    "name": "FC Bayern München",
+    "shortName": "Bayern",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 3,
+    "name": "Bayer 04 Leverkusen",
+    "shortName": "Leverkusen",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 721,
+    "name": "RB Leipzig",
+    "shortName": "RB Leipzig",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 11,
+    "name": "VfL Wolfsburg",
+    "shortName": "Wolfsburg",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 44,
+    "name": "1. FC Heidenheim 1846",
+    "shortName": "Heidenheim",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 2,
+    "name": "TSG 1899 Hoffenheim",
+    "shortName": "Hoffenheim",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 17,
+    "name": "SC Freiburg",
+    "shortName": "Freiburg",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 16,
+    "name": "FC Augsburg",
+    "shortName": "Augsburg",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 18,
+    "name": "Borussia Mönchengladbach",
+    "shortName": "M'gladbach",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 10,
+    "name": "VfB Stuttgart",
+    "shortName": "Stuttgart",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 36,
+    "name": "VfL Bochum 1848",
+    "shortName": "Bochum",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 4,
+    "name": "Borussia Dortmund",
+    "shortName": "Dortmund",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 1,
+    "name": "1. FC Köln",
+    "shortName": "1. FC Köln",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 28,
+    "name": "1. FC Union Berlin",
+    "shortName": "Union Berlin",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 15,
+    "name": "1. FSV Mainz 05",
+    "shortName": "Mainz",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 19,
+    "name": "Eintracht Frankfurt",
+    "shortName": "Frankfurt",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 55,
+    "name": "SV Darmstadt 98",
+    "shortName": "Darmstadt",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 720,
+    "name": "Holstein Kiel",
+    "shortName": "Holstein Kiel",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 20,
+    "name": "FC St. Pauli 1910",
+    "shortName": "St. Pauli",
+    "league": "BL1",
+    "country": "Germany"
+  },
+  {
+    "id": 445,
+    "name": "Empoli FC",
+    "shortName": "Empoli",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 450,
+    "name": "Hellas Verona FC",
+    "shortName": "Verona",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 470,
+    "name": "Frosinone Calcio",
+    "shortName": "Frosinone",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 113,
+    "name": "SSC Napoli",
+    "shortName": "Napoli",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 107,
+    "name": "Genoa CFC",
+    "shortName": "Genoa",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 99,
+    "name": "ACF Fiorentina",
+    "shortName": "Fiorentina",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 108,
+    "name": "FC Internazionale Milano",
+    "shortName": "Inter",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 5911,
+    "name": "AC Monza",
+    "shortName": "Monza",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 100,
+    "name": "AS Roma",
+    "shortName": "Roma",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 455,
+    "name": "US Salernitana 1919",
+    "shortName": "Salernitana",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 471,
+    "name": "US Sassuolo Calcio",
+    "shortName": "Sassuolo",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 102,
+    "name": "Atalanta BC",
+    "shortName": "Atalanta",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 5890,
+    "name": "US Lecce",
+    "shortName": "Lecce",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 110,
+    "name": "SS Lazio",
+    "shortName": "Lazio",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 115,
+    "name": "Udinese Calcio",
+    "shortName": "Udinese",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 109,
+    "name": "Juventus FC",
+    "shortName": "Juventus",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 586,
+    "name": "Torino FC",
+    "shortName": "Torino",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 104,
+    "name": "Cagliari Calcio",
+    "shortName": "Cagliari",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 103,
+    "name": "Bologna FC 1909",
+    "shortName": "Bologna",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 98,
+    "name": "AC Milan",
+    "shortName": "Milan",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 112,
+    "name": "Parma Calcio 1913",
+    "shortName": "Parma",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 454,
+    "name": "Venezia FC",
+    "shortName": "Venezia FC",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 7397,
+    "name": "Como 1907",
+    "shortName": "Como 1907",
+    "league": "SA",
+    "country": "Italy"
+  },
+  {
+    "id": 522,
+    "name": "OGC Nice",
+    "shortName": "Nice",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 521,
+    "name": "Lille OSC",
+    "shortName": "Lille",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 516,
+    "name": "Olympique de Marseille",
+    "shortName": "Marseille",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 547,
+    "name": "Stade de Reims",
+    "shortName": "Stade de Reims",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 524,
+    "name": "Paris Saint-Germain FC",
+    "shortName": "PSG",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 525,
+    "name": "FC Lorient",
+    "shortName": "Lorient",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 512,
+    "name": "Stade Brestois 29",
+    "shortName": "Brest",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 546,
+    "name": "Racing Club de Lens",
+    "shortName": "RC Lens",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 541,
+    "name": "Clermont Foot 63",
+    "shortName": "Clermont Foot",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 548,
+    "name": "AS Monaco FC",
+    "shortName": "Monaco",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 543,
+    "name": "FC Nantes",
+    "shortName": "Nantes",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 511,
+    "name": "Toulouse FC",
+    "shortName": "Toulouse",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 518,
+    "name": "Montpellier HSC",
+    "shortName": "Montpellier",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 533,
+    "name": "Le Havre AC",
+    "shortName": "Le Havre",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 529,
+    "name": "Stade Rennais FC 1901",
+    "shortName": "Stade Rennais",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 545,
+    "name": "FC Metz",
+    "shortName": "FC Metz",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 576,
+    "name": "RC Strasbourg Alsace",
+    "shortName": "Strasbourg",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 523,
+    "name": "Olympique Lyonnais",
+    "shortName": "Olympique Lyon",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 527,
+    "name": "AS Saint-Étienne",
+    "shortName": "Saint-Étienne",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 519,
+    "name": "AJ Auxerre",
+    "shortName": "Auxerre",
+    "league": "FL1",
+    "country": "France"
+  },
+  {
+    "id": 532,
+    "name": "Angers SCO",
+    "shortName": "Angers SCO",
+    "league": "FL1",
+    "country": "France"
+  }
+]

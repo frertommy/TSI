@@ -1,0 +1,2092 @@
+[
+  {
+    "id": 524,
+    "name": "Paris Saint-Germain FC",
+    "shortName": "PSG",
+    "league": "FL1",
+    "tsiRaw": 1780.51,
+    "tsiDisplay": 366,
+    "rank": 1,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "D",
+      "L",
+      "L",
+      "W",
+      "W"
+    ],
+    "form": 0.47
+  },
+  {
+    "id": 86,
+    "name": "Real Madrid CF",
+    "shortName": "Real Madrid",
+    "league": "PD",
+    "tsiRaw": 1761.62,
+    "tsiDisplay": 331,
+    "rank": 2,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "W",
+      "L",
+      "W",
+      "W",
+      "W"
+    ],
+    "form": 0.8
+  },
+  {
+    "id": 81,
+    "name": "FC Barcelona",
+    "shortName": "Barça",
+    "league": "PD",
+    "tsiRaw": 1758.93,
+    "tsiDisplay": 326,
+    "rank": 3,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "W",
+      "W",
+      "W",
+      "L",
+      "W"
+    ],
+    "form": 0.8
+  },
+  {
+    "id": 108,
+    "name": "FC Internazionale Milano",
+    "shortName": "Inter",
+    "league": "SA",
+    "tsiRaw": 1747.32,
+    "tsiDisplay": 305,
+    "rank": 4,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-23",
+    "last5": [
+      "L",
+      "W",
+      "W",
+      "D",
+      "W"
+    ],
+    "form": 0.67
+  },
+  {
+    "id": 5,
+    "name": "FC Bayern München",
+    "shortName": "Bayern",
+    "league": "BL1",
+    "tsiRaw": 1743.73,
+    "tsiDisplay": 299,
+    "rank": 5,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "W",
+      "W",
+      "D",
+      "W",
+      "W"
+    ],
+    "form": 0.87
+  },
+  {
+    "id": 3,
+    "name": "Bayer 04 Leverkusen",
+    "shortName": "Leverkusen",
+    "league": "BL1",
+    "tsiRaw": 1733.15,
+    "tsiDisplay": 281,
+    "rank": 6,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "D",
+      "W",
+      "D",
+      "L",
+      "D"
+    ],
+    "form": 0.4
+  },
+  {
+    "id": 64,
+    "name": "Liverpool FC",
+    "shortName": "Liverpool",
+    "league": "PL",
+    "tsiRaw": 1725.74,
+    "tsiDisplay": 269,
+    "rank": 7,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "W",
+      "L",
+      "D",
+      "L",
+      "D"
+    ],
+    "form": 0.33
+  },
+  {
+    "id": 57,
+    "name": "Arsenal FC",
+    "shortName": "Arsenal",
+    "league": "PL",
+    "tsiRaw": 1709.54,
+    "tsiDisplay": 244,
+    "rank": 8,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "D",
+      "L",
+      "D",
+      "W",
+      "W"
+    ],
+    "form": 0.53
+  },
+  {
+    "id": 65,
+    "name": "Manchester City FC",
+    "shortName": "Man City",
+    "league": "PL",
+    "tsiRaw": 1702.74,
+    "tsiDisplay": 234,
+    "rank": 9,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "W",
+      "W",
+      "D",
+      "W",
+      "W"
+    ],
+    "form": 0.87
+  },
+  {
+    "id": 78,
+    "name": "Club Atlético de Madrid",
+    "shortName": "Atleti",
+    "league": "PD",
+    "tsiRaw": 1665.12,
+    "tsiDisplay": 185,
+    "rank": 10,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "D",
+      "W",
+      "L",
+      "W",
+      "W"
+    ],
+    "form": 0.67
+  },
+  {
+    "id": 113,
+    "name": "SSC Napoli",
+    "shortName": "Napoli",
+    "league": "SA",
+    "tsiRaw": 1664.71,
+    "tsiDisplay": 184,
+    "rank": 11,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-23",
+    "last5": [
+      "W",
+      "W",
+      "D",
+      "D",
+      "W"
+    ],
+    "form": 0.73
+  },
+  {
+    "id": 109,
+    "name": "Juventus FC",
+    "shortName": "Juventus",
+    "league": "SA",
+    "tsiRaw": 1654.15,
+    "tsiDisplay": 172,
+    "rank": 12,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "W",
+      "D",
+      "D",
+      "W",
+      "W"
+    ],
+    "form": 0.73
+  },
+  {
+    "id": 102,
+    "name": "Atalanta BC",
+    "shortName": "Atalanta",
+    "league": "SA",
+    "tsiRaw": 1652.05,
+    "tsiDisplay": 170,
+    "rank": 13,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "D",
+      "W",
+      "W",
+      "W",
+      "L"
+    ],
+    "form": 0.67
+  },
+  {
+    "id": 100,
+    "name": "AS Roma",
+    "shortName": "Roma",
+    "league": "SA",
+    "tsiRaw": 1649.99,
+    "tsiDisplay": 167,
+    "rank": 14,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "W",
+      "W",
+      "L",
+      "W",
+      "W"
+    ],
+    "form": 0.8
+  },
+  {
+    "id": 77,
+    "name": "Athletic Club",
+    "shortName": "Athletic",
+    "league": "PD",
+    "tsiRaw": 1646.44,
+    "tsiDisplay": 163,
+    "rank": 15,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "D",
+      "W",
+      "W",
+      "W",
+      "L"
+    ],
+    "form": 0.67
+  },
+  {
+    "id": 94,
+    "name": "Villarreal CF",
+    "shortName": "Villarreal",
+    "league": "PD",
+    "tsiRaw": 1629.81,
+    "tsiDisplay": 146,
+    "rank": 16,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "W",
+      "W",
+      "W",
+      "W",
+      "W"
+    ],
+    "form": 1
+  },
+  {
+    "id": 548,
+    "name": "AS Monaco FC",
+    "shortName": "Monaco",
+    "league": "FL1",
+    "tsiRaw": 1628.2,
+    "tsiDisplay": 145,
+    "rank": 17,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "D",
+      "D",
+      "W",
+      "W",
+      "L"
+    ],
+    "form": 0.53
+  },
+  {
+    "id": 61,
+    "name": "Chelsea FC",
+    "shortName": "Chelsea",
+    "league": "PL",
+    "tsiRaw": 1625.05,
+    "tsiDisplay": 142,
+    "rank": 18,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "W",
+      "W",
+      "L",
+      "W",
+      "W"
+    ],
+    "form": 0.8
+  },
+  {
+    "id": 4,
+    "name": "Borussia Dortmund",
+    "shortName": "Dortmund",
+    "league": "BL1",
+    "tsiRaw": 1612.98,
+    "tsiDisplay": 131,
+    "rank": 19,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "W",
+      "W",
+      "W",
+      "W",
+      "W"
+    ],
+    "form": 1
+  },
+  {
+    "id": 58,
+    "name": "Aston Villa FC",
+    "shortName": "Aston Villa",
+    "league": "PL",
+    "tsiRaw": 1609.67,
+    "tsiDisplay": 128,
+    "rank": 20,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "L",
+      "W",
+      "W",
+      "W",
+      "L"
+    ],
+    "form": 0.6
+  },
+  {
+    "id": 521,
+    "name": "Lille OSC",
+    "shortName": "Lille",
+    "league": "FL1",
+    "tsiRaw": 1609.53,
+    "tsiDisplay": 128,
+    "rank": 21,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "W",
+      "W",
+      "D",
+      "L",
+      "W"
+    ],
+    "form": 0.67
+  },
+  {
+    "id": 98,
+    "name": "AC Milan",
+    "shortName": "Milan",
+    "league": "SA",
+    "tsiRaw": 1609.13,
+    "tsiDisplay": 127,
+    "rank": 22,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "W",
+      "W",
+      "W",
+      "L",
+      "W"
+    ],
+    "form": 0.8
+  },
+  {
+    "id": 522,
+    "name": "OGC Nice",
+    "shortName": "Nice",
+    "league": "FL1",
+    "tsiRaw": 1602.06,
+    "tsiDisplay": 121,
+    "rank": 23,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "W",
+      "W",
+      "W",
+      "L",
+      "W"
+    ],
+    "form": 0.8
+  },
+  {
+    "id": 516,
+    "name": "Olympique de Marseille",
+    "shortName": "Marseille",
+    "league": "FL1",
+    "tsiRaw": 1601.96,
+    "tsiDisplay": 121,
+    "rank": 24,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "W",
+      "W",
+      "D",
+      "W",
+      "W"
+    ],
+    "form": 0.87
+  },
+  {
+    "id": 110,
+    "name": "SS Lazio",
+    "shortName": "Lazio",
+    "league": "SA",
+    "tsiRaw": 1594.8,
+    "tsiDisplay": 115,
+    "rank": 25,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "D",
+      "W",
+      "D",
+      "D",
+      "L"
+    ],
+    "form": 0.4
+  },
+  {
+    "id": 103,
+    "name": "Bologna FC 1909",
+    "shortName": "Bologna",
+    "league": "SA",
+    "tsiRaw": 1594.5,
+    "tsiDisplay": 115,
+    "rank": 26,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "D",
+      "D",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0.13
+  },
+  {
+    "id": 67,
+    "name": "Newcastle United FC",
+    "shortName": "Newcastle",
+    "league": "PL",
+    "tsiRaw": 1591.62,
+    "tsiDisplay": 113,
+    "rank": 27,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "W",
+      "D",
+      "W",
+      "L",
+      "L"
+    ],
+    "form": 0.47
+  },
+  {
+    "id": 99,
+    "name": "ACF Fiorentina",
+    "shortName": "Fiorentina",
+    "league": "SA",
+    "tsiRaw": 1588.95,
+    "tsiDisplay": 111,
+    "rank": 28,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "W",
+      "L",
+      "L",
+      "W",
+      "W"
+    ],
+    "form": 0.6
+  },
+  {
+    "id": 523,
+    "name": "Olympique Lyonnais",
+    "shortName": "Olympique Lyon",
+    "league": "FL1",
+    "tsiRaw": 1587.69,
+    "tsiDisplay": 110,
+    "rank": 29,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "L",
+      "W",
+      "L",
+      "L",
+      "W"
+    ],
+    "form": 0.4
+  },
+  {
+    "id": 19,
+    "name": "Eintracht Frankfurt",
+    "shortName": "Frankfurt",
+    "league": "BL1",
+    "tsiRaw": 1585.92,
+    "tsiDisplay": 109,
+    "rank": 30,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "D",
+      "W",
+      "D",
+      "D",
+      "W"
+    ],
+    "form": 0.6
+  },
+  {
+    "id": 10,
+    "name": "VfB Stuttgart",
+    "shortName": "Stuttgart",
+    "league": "BL1",
+    "tsiRaw": 1577.88,
+    "tsiDisplay": 103,
+    "rank": 31,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "D",
+      "L",
+      "W",
+      "W",
+      "W"
+    ],
+    "form": 0.67
+  },
+  {
+    "id": 90,
+    "name": "Real Betis Balompié",
+    "shortName": "Real Betis",
+    "league": "PD",
+    "tsiRaw": 1573.87,
+    "tsiDisplay": 100,
+    "rank": 32,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-23",
+    "last5": [
+      "W",
+      "D",
+      "D",
+      "L",
+      "D"
+    ],
+    "form": 0.4
+  },
+  {
+    "id": 721,
+    "name": "RB Leipzig",
+    "shortName": "RB Leipzig",
+    "league": "BL1",
+    "tsiRaw": 1570.71,
+    "tsiDisplay": 98,
+    "rank": 33,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "D",
+      "L",
+      "D",
+      "D",
+      "L"
+    ],
+    "form": 0.2
+  },
+  {
+    "id": 576,
+    "name": "RC Strasbourg Alsace",
+    "shortName": "Strasbourg",
+    "league": "FL1",
+    "tsiRaw": 1562.2,
+    "tsiDisplay": 92,
+    "rank": 34,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "D",
+      "W",
+      "W",
+      "L",
+      "L"
+    ],
+    "form": 0.47
+  },
+  {
+    "id": 397,
+    "name": "Brighton & Hove Albion FC",
+    "shortName": "Brighton Hove",
+    "league": "PL",
+    "tsiRaw": 1560.69,
+    "tsiDisplay": 92,
+    "rank": 35,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "W",
+      "D",
+      "W",
+      "W",
+      "W"
+    ],
+    "form": 0.87
+  },
+  {
+    "id": 354,
+    "name": "Crystal Palace FC",
+    "shortName": "Crystal Palace",
+    "league": "PL",
+    "tsiRaw": 1558.69,
+    "tsiDisplay": 90,
+    "rank": 36,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "D",
+      "D",
+      "W",
+      "W",
+      "D"
+    ],
+    "form": 0.6
+  },
+  {
+    "id": 512,
+    "name": "Stade Brestois 29",
+    "shortName": "Brest",
+    "league": "FL1",
+    "tsiRaw": 1550.02,
+    "tsiDisplay": 85,
+    "rank": 37,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "L",
+      "L",
+      "W",
+      "W",
+      "L"
+    ],
+    "form": 0.4
+  },
+  {
+    "id": 546,
+    "name": "Racing Club de Lens",
+    "shortName": "RC Lens",
+    "league": "FL1",
+    "tsiRaw": 1538.57,
+    "tsiDisplay": 79,
+    "rank": 38,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "W",
+      "L",
+      "W",
+      "D",
+      "W"
+    ],
+    "form": 0.67
+  },
+  {
+    "id": 15,
+    "name": "1. FSV Mainz 05",
+    "shortName": "Mainz",
+    "league": "BL1",
+    "tsiRaw": 1536.38,
+    "tsiDisplay": 78,
+    "rank": 39,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "D",
+      "L",
+      "D",
+      "W",
+      "D"
+    ],
+    "form": 0.4
+  },
+  {
+    "id": 351,
+    "name": "Nottingham Forest FC",
+    "shortName": "Nottingham",
+    "league": "PL",
+    "tsiRaw": 1534.58,
+    "tsiDisplay": 77,
+    "rank": 40,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "L",
+      "D",
+      "D",
+      "W",
+      "L"
+    ],
+    "form": 0.33
+  },
+  {
+    "id": 12,
+    "name": "SV Werder Bremen",
+    "shortName": "Bremen",
+    "league": "BL1",
+    "tsiRaw": 1529.85,
+    "tsiDisplay": 74,
+    "rank": 41,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "W",
+      "D",
+      "D",
+      "D",
+      "W"
+    ],
+    "form": 0.6
+  },
+  {
+    "id": 17,
+    "name": "SC Freiburg",
+    "shortName": "Freiburg",
+    "league": "BL1",
+    "tsiRaw": 1527.67,
+    "tsiDisplay": 73,
+    "rank": 42,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "W",
+      "W",
+      "D",
+      "W",
+      "L"
+    ],
+    "form": 0.67
+  },
+  {
+    "id": 1044,
+    "name": "AFC Bournemouth",
+    "shortName": "Bournemouth",
+    "league": "PL",
+    "tsiRaw": 1527.14,
+    "tsiDisplay": 73,
+    "rank": 43,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "D",
+      "W",
+      "L",
+      "L",
+      "W"
+    ],
+    "form": 0.47
+  },
+  {
+    "id": 62,
+    "name": "Everton FC",
+    "shortName": "Everton",
+    "league": "PL",
+    "tsiRaw": 1526.67,
+    "tsiDisplay": 73,
+    "rank": 44,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "L",
+      "D",
+      "W",
+      "W",
+      "W"
+    ],
+    "form": 0.67
+  },
+  {
+    "id": 79,
+    "name": "CA Osasuna",
+    "shortName": "Osasuna",
+    "league": "PD",
+    "tsiRaw": 1518.96,
+    "tsiDisplay": 69,
+    "rank": 45,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "L",
+      "D",
+      "W",
+      "W",
+      "D"
+    ],
+    "form": 0.53
+  },
+  {
+    "id": 402,
+    "name": "Brentford FC",
+    "shortName": "Brentford",
+    "league": "PL",
+    "tsiRaw": 1518.57,
+    "tsiDisplay": 69,
+    "rank": 46,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "W",
+      "W",
+      "W",
+      "L",
+      "D"
+    ],
+    "form": 0.67
+  },
+  {
+    "id": 558,
+    "name": "RC Celta de Vigo",
+    "shortName": "Celta",
+    "league": "PD",
+    "tsiRaw": 1517.74,
+    "tsiDisplay": 68,
+    "rank": 47,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "L",
+      "W",
+      "W",
+      "L",
+      "W"
+    ],
+    "form": 0.6
+  },
+  {
+    "id": 7397,
+    "name": "Como 1907",
+    "shortName": "Como 1907",
+    "league": "SA",
+    "tsiRaw": 1514.18,
+    "tsiDisplay": 67,
+    "rank": 48,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2025-05-23",
+    "last5": [
+      "W",
+      "W",
+      "W",
+      "D",
+      "L"
+    ],
+    "form": 0.67
+  },
+  {
+    "id": 63,
+    "name": "Fulham FC",
+    "shortName": "Fulham",
+    "league": "PL",
+    "tsiRaw": 1508.29,
+    "tsiDisplay": 64,
+    "rank": 49,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "W",
+      "L",
+      "L",
+      "W",
+      "L"
+    ],
+    "form": 0.4
+  },
+  {
+    "id": 95,
+    "name": "Valencia CF",
+    "shortName": "Valencia",
+    "league": "PD",
+    "tsiRaw": 1499.85,
+    "tsiDisplay": 61,
+    "rank": 50,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-23",
+    "last5": [
+      "W",
+      "W",
+      "L",
+      "L",
+      "D"
+    ],
+    "form": 0.47
+  },
+  {
+    "id": 87,
+    "name": "Rayo Vallecano de Madrid",
+    "shortName": "Rayo Vallecano",
+    "league": "PD",
+    "tsiRaw": 1495.62,
+    "tsiDisplay": 59,
+    "rank": 51,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "W",
+      "W",
+      "D",
+      "W",
+      "D"
+    ],
+    "form": 0.73
+  },
+  {
+    "id": 519,
+    "name": "AJ Auxerre",
+    "shortName": "Auxerre",
+    "league": "FL1",
+    "tsiRaw": 1486.17,
+    "tsiDisplay": 56,
+    "rank": 52,
+    "matchesProcessed": 34,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "L",
+      "W",
+      "L",
+      "D",
+      "L"
+    ],
+    "form": 0.27
+  },
+  {
+    "id": 511,
+    "name": "Toulouse FC",
+    "shortName": "Toulouse",
+    "league": "FL1",
+    "tsiRaw": 1485.31,
+    "tsiDisplay": 55,
+    "rank": 53,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "L",
+      "D",
+      "W",
+      "D",
+      "W"
+    ],
+    "form": 0.53
+  },
+  {
+    "id": 107,
+    "name": "Genoa CFC",
+    "shortName": "Genoa",
+    "league": "SA",
+    "tsiRaw": 1482.18,
+    "tsiDisplay": 54,
+    "rank": 54,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "L",
+      "L",
+      "D",
+      "L",
+      "W"
+    ],
+    "form": 0.27
+  },
+  {
+    "id": 586,
+    "name": "Torino FC",
+    "shortName": "Torino",
+    "league": "SA",
+    "tsiRaw": 1478.62,
+    "tsiDisplay": 53,
+    "rank": 55,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "L",
+      "D",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0.07
+  },
+  {
+    "id": 92,
+    "name": "Real Sociedad de Fútbol",
+    "shortName": "Real Sociedad",
+    "league": "PD",
+    "tsiRaw": 1476.85,
+    "tsiDisplay": 52,
+    "rank": 56,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "D",
+      "L",
+      "L",
+      "W",
+      "L"
+    ],
+    "form": 0.27
+  },
+  {
+    "id": 529,
+    "name": "Stade Rennais FC 1901",
+    "shortName": "Stade Rennais",
+    "league": "FL1",
+    "tsiRaw": 1472.76,
+    "tsiDisplay": 51,
+    "rank": 57,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "W",
+      "L",
+      "L",
+      "W",
+      "L"
+    ],
+    "form": 0.4
+  },
+  {
+    "id": 263,
+    "name": "Deportivo Alavés",
+    "shortName": "Alavés",
+    "league": "PD",
+    "tsiRaw": 1471.78,
+    "tsiDisplay": 51,
+    "rank": 58,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "D",
+      "L",
+      "W",
+      "W",
+      "D"
+    ],
+    "form": 0.53
+  },
+  {
+    "id": 298,
+    "name": "Girona FC",
+    "shortName": "Girona",
+    "league": "PD",
+    "tsiRaw": 1471.57,
+    "tsiDisplay": 51,
+    "rank": 59,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "W",
+      "L",
+      "W",
+      "L",
+      "L"
+    ],
+    "form": 0.4
+  },
+  {
+    "id": 80,
+    "name": "RCD Espanyol de Barcelona",
+    "shortName": "Espanyol",
+    "league": "PD",
+    "tsiRaw": 1469.28,
+    "tsiDisplay": 50,
+    "rank": 60,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "L",
+      "L",
+      "L",
+      "L",
+      "W"
+    ],
+    "form": 0.2
+  },
+  {
+    "id": 66,
+    "name": "Manchester United FC",
+    "shortName": "Man United",
+    "league": "PL",
+    "tsiRaw": 1465.7,
+    "tsiDisplay": 49,
+    "rank": 61,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "D",
+      "L",
+      "L",
+      "L",
+      "W"
+    ],
+    "form": 0.27
+  },
+  {
+    "id": 16,
+    "name": "FC Augsburg",
+    "shortName": "Augsburg",
+    "league": "BL1",
+    "tsiRaw": 1465.06,
+    "tsiDisplay": 48,
+    "rank": 62,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "D",
+      "L",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0.07
+  },
+  {
+    "id": 11,
+    "name": "VfL Wolfsburg",
+    "shortName": "Wolfsburg",
+    "league": "BL1",
+    "tsiRaw": 1459.97,
+    "tsiDisplay": 47,
+    "rank": 63,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "D",
+      "L",
+      "L",
+      "D",
+      "W"
+    ],
+    "form": 0.33
+  },
+  {
+    "id": 563,
+    "name": "West Ham United FC",
+    "shortName": "West Ham",
+    "league": "PL",
+    "tsiRaw": 1459.4,
+    "tsiDisplay": 47,
+    "rank": 64,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "L",
+      "D",
+      "W",
+      "L",
+      "W"
+    ],
+    "form": 0.47
+  },
+  {
+    "id": 89,
+    "name": "RCD Mallorca",
+    "shortName": "Mallorca",
+    "league": "PD",
+    "tsiRaw": 1458.25,
+    "tsiDisplay": 46,
+    "rank": 65,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "L",
+      "W",
+      "L",
+      "L",
+      "D"
+    ],
+    "form": 0.27
+  },
+  {
+    "id": 745,
+    "name": "CD Leganés",
+    "shortName": "Leganés",
+    "league": "PD",
+    "tsiRaw": 1457.26,
+    "tsiDisplay": 46,
+    "rank": 66,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "D",
+      "W",
+      "L",
+      "W",
+      "W"
+    ],
+    "form": 0.67
+  },
+  {
+    "id": 112,
+    "name": "Parma Calcio 1913",
+    "shortName": "Parma",
+    "league": "SA",
+    "tsiRaw": 1454.19,
+    "tsiDisplay": 45,
+    "rank": 67,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "D",
+      "L",
+      "L",
+      "D",
+      "W"
+    ],
+    "form": 0.33
+  },
+  {
+    "id": 18,
+    "name": "Borussia Mönchengladbach",
+    "shortName": "M'gladbach",
+    "league": "BL1",
+    "tsiRaw": 1453.99,
+    "tsiDisplay": 45,
+    "rank": 68,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "L",
+      "L",
+      "D",
+      "L",
+      "L"
+    ],
+    "form": 0.07
+  },
+  {
+    "id": 28,
+    "name": "1. FC Union Berlin",
+    "shortName": "Union Berlin",
+    "league": "BL1",
+    "tsiRaw": 1450.93,
+    "tsiDisplay": 44,
+    "rank": 69,
+    "matchesProcessed": 67,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "D",
+      "D",
+      "D",
+      "L",
+      "W"
+    ],
+    "form": 0.4
+  },
+  {
+    "id": 76,
+    "name": "Wolverhampton Wanderers FC",
+    "shortName": "Wolverhampton",
+    "league": "PL",
+    "tsiRaw": 1449.86,
+    "tsiDisplay": 44,
+    "rank": 70,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "W",
+      "L",
+      "L",
+      "L",
+      "D"
+    ],
+    "form": 0.27
+  },
+  {
+    "id": 532,
+    "name": "Angers SCO",
+    "shortName": "Angers SCO",
+    "league": "FL1",
+    "tsiRaw": 1443.69,
+    "tsiDisplay": 42,
+    "rank": 71,
+    "matchesProcessed": 34,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "L",
+      "L",
+      "W",
+      "W",
+      "L"
+    ],
+    "form": 0.4
+  },
+  {
+    "id": 2,
+    "name": "TSG 1899 Hoffenheim",
+    "shortName": "Hoffenheim",
+    "league": "BL1",
+    "tsiRaw": 1435.74,
+    "tsiDisplay": 40,
+    "rank": 72,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "L",
+      "L",
+      "D",
+      "D",
+      "L"
+    ],
+    "form": 0.13
+  },
+  {
+    "id": 73,
+    "name": "Tottenham Hotspur FC",
+    "shortName": "Tottenham",
+    "league": "PL",
+    "tsiRaw": 1431.63,
+    "tsiDisplay": 39,
+    "rank": 73,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "L",
+      "D",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0.07
+  },
+  {
+    "id": 82,
+    "name": "Getafe CF",
+    "shortName": "Getafe",
+    "league": "PD",
+    "tsiRaw": 1431.57,
+    "tsiDisplay": 39,
+    "rank": 74,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "L",
+      "L",
+      "L",
+      "W",
+      "L"
+    ],
+    "form": 0.2
+  },
+  {
+    "id": 20,
+    "name": "FC St. Pauli 1910",
+    "shortName": "St. Pauli",
+    "league": "BL1",
+    "tsiRaw": 1431.37,
+    "tsiDisplay": 39,
+    "rank": 75,
+    "matchesProcessed": 34,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "D",
+      "D",
+      "L",
+      "D",
+      "L"
+    ],
+    "form": 0.2
+  },
+  {
+    "id": 559,
+    "name": "Sevilla FC",
+    "shortName": "Sevilla FC",
+    "league": "PD",
+    "tsiRaw": 1430.26,
+    "tsiDisplay": 39,
+    "rank": 76,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "D",
+      "L",
+      "W",
+      "L",
+      "L"
+    ],
+    "form": 0.27
+  },
+  {
+    "id": 115,
+    "name": "Udinese Calcio",
+    "shortName": "Udinese",
+    "league": "SA",
+    "tsiRaw": 1429.98,
+    "tsiDisplay": 39,
+    "rank": 77,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "D",
+      "W",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0.27
+  },
+  {
+    "id": 543,
+    "name": "FC Nantes",
+    "shortName": "Nantes",
+    "league": "FL1",
+    "tsiRaw": 1428.62,
+    "tsiDisplay": 39,
+    "rank": 78,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "D",
+      "D",
+      "L",
+      "D",
+      "W"
+    ],
+    "form": 0.4
+  },
+  {
+    "id": 547,
+    "name": "Stade de Reims",
+    "shortName": "Stade de Reims",
+    "league": "FL1",
+    "tsiRaw": 1420.53,
+    "tsiDisplay": 37,
+    "rank": 79,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "W",
+      "D",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0.27
+  },
+  {
+    "id": 470,
+    "name": "Frosinone Calcio",
+    "shortName": "Frosinone",
+    "league": "SA",
+    "tsiRaw": 1411.64,
+    "tsiDisplay": 35,
+    "rank": 80,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2024-05-26",
+    "last5": [
+      "W",
+      "D",
+      "L",
+      "W",
+      "L"
+    ],
+    "form": 0.47
+  },
+  {
+    "id": 264,
+    "name": "Cádiz CF",
+    "shortName": "Cádiz CF",
+    "league": "PD",
+    "tsiRaw": 1411.43,
+    "tsiDisplay": 35,
+    "rank": 81,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2024-05-25",
+    "last5": [
+      "L",
+      "W",
+      "W",
+      "D",
+      "L"
+    ],
+    "form": 0.47
+  },
+  {
+    "id": 454,
+    "name": "Venezia FC",
+    "shortName": "Venezia FC",
+    "league": "SA",
+    "tsiRaw": 1410,
+    "tsiDisplay": 35,
+    "rank": 82,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "L",
+      "D",
+      "W",
+      "L",
+      "L"
+    ],
+    "form": 0.27
+  },
+  {
+    "id": 450,
+    "name": "Hellas Verona FC",
+    "shortName": "Verona",
+    "league": "SA",
+    "tsiRaw": 1408.67,
+    "tsiDisplay": 34,
+    "rank": 83,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "L",
+      "L",
+      "D",
+      "D",
+      "W"
+    ],
+    "form": 0.33
+  },
+  {
+    "id": 1,
+    "name": "1. FC Köln",
+    "shortName": "1. FC Köln",
+    "league": "BL1",
+    "tsiRaw": 1406.38,
+    "tsiDisplay": 34,
+    "rank": 84,
+    "matchesProcessed": 34,
+    "lastMatchDate": "2024-05-18",
+    "last5": [
+      "L",
+      "D",
+      "D",
+      "W",
+      "L"
+    ],
+    "form": 0.33
+  },
+  {
+    "id": 533,
+    "name": "Le Havre AC",
+    "shortName": "Le Havre",
+    "league": "FL1",
+    "tsiRaw": 1405.62,
+    "tsiDisplay": 34,
+    "rank": 85,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "L",
+      "D",
+      "W",
+      "L",
+      "W"
+    ],
+    "form": 0.47
+  },
+  {
+    "id": 527,
+    "name": "AS Saint-Étienne",
+    "shortName": "Saint-Étienne",
+    "league": "FL1",
+    "tsiRaw": 1404.89,
+    "tsiDisplay": 34,
+    "rank": 86,
+    "matchesProcessed": 33,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "W",
+      "L",
+      "L",
+      "W",
+      "L"
+    ],
+    "form": 0.4
+  },
+  {
+    "id": 44,
+    "name": "1. FC Heidenheim 1846",
+    "shortName": "Heidenheim",
+    "league": "BL1",
+    "tsiRaw": 1403.74,
+    "tsiDisplay": 33,
+    "rank": 87,
+    "matchesProcessed": 68,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "L",
+      "W",
+      "D",
+      "W",
+      "L"
+    ],
+    "form": 0.47
+  },
+  {
+    "id": 104,
+    "name": "Cagliari Calcio",
+    "shortName": "Cagliari",
+    "league": "SA",
+    "tsiRaw": 1403.66,
+    "tsiDisplay": 33,
+    "rank": 88,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-23",
+    "last5": [
+      "W",
+      "L",
+      "L",
+      "W",
+      "L"
+    ],
+    "form": 0.4
+  },
+  {
+    "id": 5890,
+    "name": "US Lecce",
+    "shortName": "Lecce",
+    "league": "SA",
+    "tsiRaw": 1399.02,
+    "tsiDisplay": 33,
+    "rank": 89,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "D",
+      "L",
+      "D",
+      "W",
+      "W"
+    ],
+    "form": 0.53
+  },
+  {
+    "id": 720,
+    "name": "Holstein Kiel",
+    "shortName": "Holstein Kiel",
+    "league": "BL1",
+    "tsiRaw": 1395.28,
+    "tsiDisplay": 32,
+    "rank": 90,
+    "matchesProcessed": 34,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "D",
+      "W",
+      "W",
+      "L",
+      "L"
+    ],
+    "form": 0.47
+  },
+  {
+    "id": 525,
+    "name": "FC Lorient",
+    "shortName": "Lorient",
+    "league": "FL1",
+    "tsiRaw": 1394.59,
+    "tsiDisplay": 32,
+    "rank": 91,
+    "matchesProcessed": 34,
+    "lastMatchDate": "2024-05-19",
+    "last5": [
+      "L",
+      "L",
+      "L",
+      "L",
+      "W"
+    ],
+    "form": 0.2
+  },
+  {
+    "id": 545,
+    "name": "FC Metz",
+    "shortName": "FC Metz",
+    "league": "FL1",
+    "tsiRaw": 1389.96,
+    "tsiDisplay": 31,
+    "rank": 92,
+    "matchesProcessed": 34,
+    "lastMatchDate": "2024-05-19",
+    "last5": [
+      "W",
+      "L",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0.2
+  },
+  {
+    "id": 541,
+    "name": "Clermont Foot 63",
+    "shortName": "Clermont Foot",
+    "league": "FL1",
+    "tsiRaw": 1385.82,
+    "tsiDisplay": 30,
+    "rank": 93,
+    "matchesProcessed": 34,
+    "lastMatchDate": "2024-05-19",
+    "last5": [
+      "L",
+      "W",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0.2
+  },
+  {
+    "id": 471,
+    "name": "US Sassuolo Calcio",
+    "shortName": "Sassuolo",
+    "league": "SA",
+    "tsiRaw": 1377.13,
+    "tsiDisplay": 29,
+    "rank": 94,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2024-05-26",
+    "last5": [
+      "L",
+      "W",
+      "L",
+      "L",
+      "D"
+    ],
+    "form": 0.27
+  },
+  {
+    "id": 445,
+    "name": "Empoli FC",
+    "shortName": "Empoli",
+    "league": "SA",
+    "tsiRaw": 1370.11,
+    "tsiDisplay": 28,
+    "rank": 95,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "L",
+      "L",
+      "W",
+      "W",
+      "L"
+    ],
+    "form": 0.4
+  },
+  {
+    "id": 267,
+    "name": "UD Almería",
+    "shortName": "Almería",
+    "league": "PD",
+    "tsiRaw": 1367.59,
+    "tsiDisplay": 27,
+    "rank": 96,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2024-05-25",
+    "last5": [
+      "W",
+      "L",
+      "L",
+      "D",
+      "W"
+    ],
+    "form": 0.47
+  },
+  {
+    "id": 275,
+    "name": "UD Las Palmas",
+    "shortName": "Las Palmas",
+    "league": "PD",
+    "tsiRaw": 1362.57,
+    "tsiDisplay": 27,
+    "rank": 97,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "L",
+      "L",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0
+  },
+  {
+    "id": 328,
+    "name": "Burnley FC",
+    "shortName": "Burnley",
+    "league": "PL",
+    "tsiRaw": 1356.76,
+    "tsiDisplay": 26,
+    "rank": 98,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2024-05-19",
+    "last5": [
+      "W",
+      "D",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0.27
+  },
+  {
+    "id": 389,
+    "name": "Luton Town FC",
+    "shortName": "Luton Town",
+    "league": "PL",
+    "tsiRaw": 1353.86,
+    "tsiDisplay": 26,
+    "rank": 99,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2024-05-19",
+    "last5": [
+      "L",
+      "L",
+      "D",
+      "L",
+      "L"
+    ],
+    "form": 0.07
+  },
+  {
+    "id": 338,
+    "name": "Leicester City FC",
+    "shortName": "Leicester City",
+    "league": "PL",
+    "tsiRaw": 1353.56,
+    "tsiDisplay": 26,
+    "rank": 100,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "L",
+      "W",
+      "D",
+      "W",
+      "L"
+    ],
+    "form": 0.47
+  },
+  {
+    "id": 36,
+    "name": "VfL Bochum 1848",
+    "shortName": "Bochum",
+    "league": "BL1",
+    "tsiRaw": 1351.86,
+    "tsiDisplay": 25,
+    "rank": 101,
+    "matchesProcessed": 67,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "L",
+      "D",
+      "D",
+      "L",
+      "W"
+    ],
+    "form": 0.33
+  },
+  {
+    "id": 349,
+    "name": "Ipswich Town FC",
+    "shortName": "Ipswich Town",
+    "league": "PL",
+    "tsiRaw": 1344.13,
+    "tsiDisplay": 24,
+    "rank": 102,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "L",
+      "D",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0.07
+  },
+  {
+    "id": 83,
+    "name": "Granada CF",
+    "shortName": "Granada",
+    "league": "PD",
+    "tsiRaw": 1336.89,
+    "tsiDisplay": 24,
+    "rank": 103,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2024-05-24",
+    "last5": [
+      "L",
+      "L",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0
+  },
+  {
+    "id": 55,
+    "name": "SV Darmstadt 98",
+    "shortName": "Darmstadt",
+    "league": "BL1",
+    "tsiRaw": 1327.41,
+    "tsiDisplay": 23,
+    "rank": 104,
+    "matchesProcessed": 34,
+    "lastMatchDate": "2024-05-18",
+    "last5": [
+      "W",
+      "L",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0.2
+  },
+  {
+    "id": 518,
+    "name": "Montpellier HSC",
+    "shortName": "Montpellier",
+    "league": "FL1",
+    "tsiRaw": 1321.3,
+    "tsiDisplay": 22,
+    "rank": 105,
+    "matchesProcessed": 67,
+    "lastMatchDate": "2025-05-17",
+    "last5": [
+      "L",
+      "D",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0.07
+  },
+  {
+    "id": 455,
+    "name": "US Salernitana 1919",
+    "shortName": "Salernitana",
+    "league": "SA",
+    "tsiRaw": 1310.34,
+    "tsiDisplay": 21,
+    "rank": 106,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2024-05-25",
+    "last5": [
+      "L",
+      "L",
+      "D",
+      "L",
+      "D"
+    ],
+    "form": 0.13
+  },
+  {
+    "id": 356,
+    "name": "Sheffield United FC",
+    "shortName": "Sheffield Utd",
+    "league": "PL",
+    "tsiRaw": 1294.84,
+    "tsiDisplay": 20,
+    "rank": 107,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2024-05-19",
+    "last5": [
+      "L",
+      "L",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0
+  },
+  {
+    "id": 5911,
+    "name": "AC Monza",
+    "shortName": "Monza",
+    "league": "SA",
+    "tsiRaw": 1294.67,
+    "tsiDisplay": 20,
+    "rank": 108,
+    "matchesProcessed": 76,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "L",
+      "L",
+      "W",
+      "L",
+      "L"
+    ],
+    "form": 0.2
+  },
+  {
+    "id": 340,
+    "name": "Southampton FC",
+    "shortName": "Southampton",
+    "league": "PL",
+    "tsiRaw": 1291.29,
+    "tsiDisplay": 19,
+    "rank": 109,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2025-05-25",
+    "last5": [
+      "L",
+      "L",
+      "D",
+      "L",
+      "L"
+    ],
+    "form": 0.07
+  },
+  {
+    "id": 250,
+    "name": "Real Valladolid CF",
+    "shortName": "Valladolid",
+    "league": "PD",
+    "tsiRaw": 1286.74,
+    "tsiDisplay": 19,
+    "rank": 110,
+    "matchesProcessed": 38,
+    "lastMatchDate": "2025-05-24",
+    "last5": [
+      "L",
+      "L",
+      "L",
+      "L",
+      "L"
+    ],
+    "form": 0
+  }
+]

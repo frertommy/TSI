@@ -1,0 +1,92 @@
+[
+  {
+    "rank": 1,
+    "id": 524,
+    "name": "Paris Saint-Germain FC",
+    "shortName": "PSG",
+    "league": "FL1",
+    "tsiDisplay": 366,
+    "tsiRaw": 1780.51
+  },
+  {
+    "rank": 2,
+    "id": 86,
+    "name": "Real Madrid CF",
+    "shortName": "Real Madrid",
+    "league": "PD",
+    "tsiDisplay": 331,
+    "tsiRaw": 1761.62
+  },
+  {
+    "rank": 3,
+    "id": 81,
+    "name": "FC Barcelona",
+    "shortName": "Barça",
+    "league": "PD",
+    "tsiDisplay": 326,
+    "tsiRaw": 1758.93
+  },
+  {
+    "rank": 4,
+    "id": 108,
+    "name": "FC Internazionale Milano",
+    "shortName": "Inter",
+    "league": "SA",
+    "tsiDisplay": 305,
+    "tsiRaw": 1747.32
+  },
+  {
+    "rank": 5,
+    "id": 5,
+    "name": "FC Bayern München",
+    "shortName": "Bayern",
+    "league": "BL1",
+    "tsiDisplay": 299,
+    "tsiRaw": 1743.73
+  },
+  {
+    "rank": 6,
+    "id": 3,
+    "name": "Bayer 04 Leverkusen",
+    "shortName": "Leverkusen",
+    "league": "BL1",
+    "tsiDisplay": 281,
+    "tsiRaw": 1733.15
+  },
+  {
+    "rank": 7,
+    "id": 64,
+    "name": "Liverpool FC",
+    "shortName": "Liverpool",
+    "league": "PL",
+    "tsiDisplay": 269,
+    "tsiRaw": 1725.74
+  },
+  {
+    "rank": 8,
+    "id": 57,
+    "name": "Arsenal FC",
+    "shortName": "Arsenal",
+    "league": "PL",
+    "tsiDisplay": 244,
+    "tsiRaw": 1709.54
+  },
+  {
+    "rank": 9,
+    "id": 65,
+    "name": "Manchester City FC",
+    "shortName": "Man City",
+    "league": "PL",
+    "tsiDisplay": 234,
+    "tsiRaw": 1702.74
+  },
+  {
+    "rank": 10,
+    "id": 78,
+    "name": "Club Atlético de Madrid",
+    "shortName": "Atleti",
+    "league": "PD",
+    "tsiDisplay": 185,
+    "tsiRaw": 1665.12
+  }
+]

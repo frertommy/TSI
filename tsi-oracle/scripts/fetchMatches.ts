@@ -1,4 +1,5 @@
 import * as path from 'path';
+import { execSync } from 'child_process';
 import {
   LEAGUES,
   SEASONS,
@@ -23,33 +24,52 @@ function getApiKey(): string {
 
 interface APIResponse {
   matches: APIMatch[];
+  message?: string;
+  errorCode?: number;
 }
 
-async function fetchWithRetry(
-  url: string,
-  headers: Record<string, string>,
-  retries = 3
-): Promise<APIResponse> {
+/**
+ * Fetch URL using curl subprocess (Node.js fetch has DNS issues in some environments).
+ * Returns { status, body } or throws on network failure.
+ */
+function curlFetch(url: string, apiKey: string): { status: number; body: string } {
+  try {
+    // Write response body to stdout, HTTP status code to stderr via -w
+    const result = execSync(
+      `curl -s -w "\\n__HTTP_STATUS__%{http_code}" -H "X-Auth-Token: ${apiKey}" "${url}"`,
+      { encoding: 'utf8', timeout: 60_000 }
+    );
+    const lines = result.trimEnd().split('\n');
+    const statusLine = lines.pop()!;
+    const status = parseInt(statusLine.replace('__HTTP_STATUS__', ''), 10);
+    const body = lines.join('\n');
+    return { status, body };
+  } catch (err: unknown) {
+    throw new Error(`curl request failed: ${err instanceof Error ? err.message : String(err)}`);
+  }
+}
+
+async function fetchWithRetry(url: string, apiKey: string, retries = 3): Promise<APIResponse | null> {
   for (let attempt = 0; attempt <= retries; attempt++) {
-    const response = await fetch(url, { headers });
+    const { status, body } = curlFetch(url, apiKey);
 
-    if (response.ok) {
-      return (await response.json()) as APIResponse;
+    if (status === 200) {
+      return JSON.parse(body) as APIResponse;
     }
 
-    if (response.status === 403) {
-      console.error('ERROR: Invalid API key (403 Forbidden)');
-      process.exit(1);
+    if (status === 403) {
+      // Could be restricted season (free tier) — don't exit, return null
+      return null;
     }
 
-    if (response.status === 429) {
+    if (status === 429) {
       const waitTime = 60_000;
-      console.warn(`  Rate limited (429). Waiting 60s before retry ${attempt + 1}/${retries}...`);
+      console.warn(`\n  Rate limited (429). Waiting 60s before retry ${attempt + 1}/${retries}...`);
       await sleep(waitTime);
       continue;
     }
 
-    throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+    throw new Error(`API request failed: HTTP ${status}`);
   }
 
   throw new Error('Max retries exceeded for rate limiting');
@@ -67,6 +87,7 @@ export async function fetchAllMatches(): Promise<FetchResult[]> {
   ensureDir(RAW_DIR);
 
   const results: FetchResult[] = [];
+  const skippedSeasons: string[] = [];
   let requestCount = 0;
 
   for (const league of LEAGUES) {
@@ -85,15 +106,22 @@ export async function fetchAllMatches(): Promise<FetchResult[]> {
         continue;
       }
 
-      // Rate limiting: wait 6s between API calls
+      // Rate limiting: wait 7s between API calls (10 req/min limit)
       if (requestCount > 0) {
-        await sleep(6000);
+        await sleep(7000);
       }
 
       const url = `${API_BASE}/competitions/${league.code}/matches?season=${season}&status=FINISHED`;
       process.stdout.write(`  Fetching ${league.code} ${season}...`);
 
-      const data = await fetchWithRetry(url, { 'X-Auth-Token': apiKey });
+      const data = await fetchWithRetry(url, apiKey);
+      requestCount++;
+
+      if (!data) {
+        console.log(` restricted (free tier) ✗`);
+        skippedSeasons.push(`${league.code} ${season}`);
+        continue;
+      }
 
       // Cache the response
       writeJSON(cacheFile, data);
@@ -105,8 +133,12 @@ export async function fetchAllMatches(): Promise<FetchResult[]> {
         matches: data.matches,
         fromCache: false,
       });
-      requestCount++;
     }
+  }
+
+  if (skippedSeasons.length > 0) {
+    console.log(`\n  Note: ${skippedSeasons.length} season(s) skipped (upgrade API plan for historical data):`);
+    console.log(`    ${skippedSeasons.join(', ')}`);
   }
 
   return results;
