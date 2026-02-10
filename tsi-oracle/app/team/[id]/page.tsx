@@ -73,8 +73,12 @@ async function getTeamData(id: string) {
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 10);
 
-  // Compute stats from history
-  const historyPoints = (history ?? []) as { date: string; elo: number; tsi_display: number }[];
+  // Compute stats from history — coerce NUMERIC strings to numbers
+  const historyPoints = ((history ?? []) as { date: string; elo: number; tsi_display: number }[]).map(h => ({
+    date: h.date,
+    elo: Number(h.elo),
+    tsi_display: Number(h.tsi_display),
+  }));
   let peakTsi = 0;
   let peakDate = '';
   let lowestTsi = Infinity;
@@ -129,11 +133,11 @@ async function getTeamData(id: string) {
       name: team.name,
       league: team.league,
       leagueName: team.league_name,
-      elo: team.current_elo,
-      tsiDisplay: team.current_tsi_display,
-      rank: team.current_rank,
-      change7d: team.change_7d,
-      changePercent7d: team.change_percent_7d,
+      elo: Number(team.current_elo),
+      tsiDisplay: Number(team.current_tsi_display),
+      rank: Number(team.current_rank),
+      change7d: Number(team.change_7d),
+      changePercent7d: Number(team.change_percent_7d),
     },
     history: historyPoints.map((h) => ({
       date: h.date,

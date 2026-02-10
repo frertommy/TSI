@@ -60,8 +60,12 @@ export async function GET(
       return NextResponse.json({ error: 'Database error' }, { status: 500 });
     }
 
-    // Compute stats from history
-    const historyPoints = (history ?? []) as HistoryRow[];
+    // Compute stats from history — coerce NUMERIC strings to numbers
+    const historyPoints = ((history ?? []) as HistoryRow[]).map(h => ({
+      date: h.date,
+      elo: Number(h.elo),
+      tsi_display: Number(h.tsi_display),
+    }));
     let peakElo = 0;
     let peakDate = '';
     let lowestElo = Infinity;
@@ -103,11 +107,11 @@ export async function GET(
         name: team.name,
         league: team.league,
         leagueName: team.league_name,
-        elo: team.current_elo,
-        tsiDisplay: team.current_tsi_display,
-        rank: team.current_rank,
-        change7d: team.change_7d,
-        changePercent7d: team.change_percent_7d,
+        elo: Number(team.current_elo),
+        tsiDisplay: Number(team.current_tsi_display),
+        rank: Number(team.current_rank),
+        change7d: Number(team.change_7d),
+        changePercent7d: Number(team.change_percent_7d),
       },
       history: historyPoints.map(h => ({
         date: h.date,
