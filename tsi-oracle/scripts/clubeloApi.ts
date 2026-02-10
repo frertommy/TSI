@@ -1,17 +1,25 @@
 /**
- * ClubElo data fetcher — downloads the combined dataset from the
- * tonyelhabr/club-rankings GitHub release (mirrors ClubElo daily).
+ * ClubElo data fetcher — supports two data sources:
  *
- * Single download gives us both current snapshot AND full history
- * for all teams — no per-team API calls needed.
+ * 1. **ClubElo API** (api.clubelo.com) — preferred, most up-to-date
+ *    - /CLUBNAME → full history CSV for a club
+ *    - /YYYY-MM-DD → daily ranking CSV for all clubs
  *
- * Caches the ~49MB CSV to data/raw/clubelo-full.csv.
+ * 2. **GitHub mirror** (tonyelhabr/club-rankings) — fallback when API is down
+ *    - Combined ~49MB CSV with all teams & dates
+ *
+ * The pipeline tries the ClubElo API first. If it returns 404 or errors,
+ * it falls back to the GitHub mirror automatically.
+ *
+ * Caches the mirror CSV to data/raw/clubelo-full.csv.
  */
 
 import * as fs from 'fs';
 import * as path from 'path';
 import { execSync } from 'child_process';
 import { ensureDir } from './utils';
+
+const CLUBELO_API_BASE = 'http://api.clubelo.com';
 
 const GITHUB_MIRROR_URL =
   'https://github.com/tonyelhabr/club-rankings/releases/download/club-rankings/clubelo-club-rankings.csv';
@@ -23,6 +31,74 @@ const CACHE_FILE = path.join(RAW_DIR, 'clubelo-full.csv');
 
 /** Maximum age for cache (24 hours in ms) */
 const CACHE_MAX_AGE_MS = 24 * 60 * 60 * 1000;
+
+// ── ClubElo API (direct) ────────────────────────────────────────────
+
+/**
+ * Check if the ClubElo API is reachable by fetching a known team.
+ * Returns true if the API responds with 200 and CSV-like content.
+ */
+export function isClubEloApiAvailable(): boolean {
+  try {
+    const result = execSync(
+      `curl -sL -o /dev/null -w "%{http_code}" "${CLUBELO_API_BASE}/Arsenal"`,
+      { timeout: 10000 }
+    ).toString().trim();
+    return result === '200';
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Fetch a club's full Elo history from api.clubelo.com/CLUBNAME.
+ * Returns the raw CSV text or null if the API is unavailable.
+ *
+ * CSV columns: Rank,Club,Country,Level,Elo,From,To
+ */
+export function fetchClubHistory(clubName: string): string | null {
+  try {
+    const url = `${CLUBELO_API_BASE}/${encodeURIComponent(clubName)}`;
+    const result = execSync(`curl -sL "${url}"`, { timeout: 15000 }).toString();
+
+    // Check for valid CSV (must have at least a header + 1 data line)
+    const lines = result.trim().split('\n');
+    if (lines.length < 2) return null;
+
+    // Check the header looks right (should contain "Club" or "Elo")
+    const header = lines[0].toLowerCase();
+    if (!header.includes('club') && !header.includes('elo')) return null;
+
+    return result;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Fetch the daily ranking for a specific date from api.clubelo.com/YYYY-MM-DD.
+ * Returns the raw CSV text or null if the API is unavailable.
+ *
+ * CSV columns: Rank,Club,Country,Level,Elo,From,To
+ */
+export function fetchDailyRanking(date: string): string | null {
+  try {
+    const url = `${CLUBELO_API_BASE}/${date}`;
+    const result = execSync(`curl -sL "${url}"`, { timeout: 15000 }).toString();
+
+    const lines = result.trim().split('\n');
+    if (lines.length < 2) return null;
+
+    const header = lines[0].toLowerCase();
+    if (!header.includes('club') && !header.includes('elo')) return null;
+
+    return result;
+  } catch {
+    return null;
+  }
+}
+
+// ── GitHub Mirror (fallback) ────────────────────────────────────────
 
 /**
  * Check if a cache file exists and is fresh (< 24h old).
@@ -85,4 +161,14 @@ export function readCachedDataset(): string {
     );
   }
   return fs.readFileSync(CACHE_FILE, 'utf8');
+}
+
+/**
+ * Force-invalidate the GitHub mirror cache so next download is fresh.
+ */
+export function invalidateCache(): void {
+  if (fs.existsSync(CACHE_FILE)) {
+    fs.unlinkSync(CACHE_FILE);
+    console.log('  Cache invalidated — will re-download on next run.');
+  }
 }

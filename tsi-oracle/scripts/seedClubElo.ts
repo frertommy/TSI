@@ -1,27 +1,33 @@
 /**
  * seedClubElo.ts — Main ClubElo seed pipeline.
  *
- * Downloads the combined ClubElo dataset from the GitHub mirror
- * (tonyelhabr/club-rankings), extracts both current snapshot and
- * historical data, applies the TSI display sigmoid mapping, and
- * outputs JSON files for the frontend.
+ * Data source strategy (in order of preference):
+ *   1. ClubElo API (api.clubelo.com) — most up-to-date
+ *   2. GitHub mirror (tonyelhabr/club-rankings) — fallback when API is down
  *
  * Steps:
- *   1. Download combined dataset (one file, ~49MB)
- *   2. Find latest snapshot date and extract top-flight teams
+ *   1. Check if ClubElo API is available
+ *   2a. If API is up: fetch current ranking + per-team history from API
+ *   2b. If API is down: download combined dataset from GitHub mirror
  *   3. Build team registry (data/teams.json)
- *   4. Extract history for top 30 teams from the same dataset
- *   5. Process history into daily time series (data/tsi_history.json)
- *   6. Generate current snapshot with 7d change (data/tsi_current.json)
- *   7. Generate top 10 (data/top10.json)
- *   8. Run validation
- *   9. Print summary
+ *   4. Extract/build daily time series (data/tsi_history.json)
+ *   5. Generate current snapshot with 7d change (data/tsi_current.json)
+ *   6. Generate top 10 (data/top10.json)
+ *   7. Run validation
+ *   8. Print summary
  */
 
 import * as path from 'path';
 import { writeJSON, DATA_DIR } from './utils';
 import { toDisplay } from '../lib/tsi/mapping';
-import { downloadFullDataset, readCachedDataset } from './clubeloApi';
+import {
+  isClubEloApiAvailable,
+  fetchDailyRanking,
+  fetchClubHistory,
+  downloadFullDataset,
+  readCachedDataset,
+  invalidateCache,
+} from './clubeloApi';
 import {
   parseClubEloCsv,
   filterTopFlight,
@@ -158,6 +164,127 @@ function extractTeamHistory(allRows: ClubEloRow[], clubName: string): ClubEloRow
   return unique.sort((a, b) => a.from.localeCompare(b.from));
 }
 
+/**
+ * Parse the ClubElo API per-team CSV (7 columns, no date/updated_at).
+ * API CSV columns: Rank,Club,Country,Level,Elo,From,To
+ */
+function parseApiCsv(csvText: string): ClubEloRow[] {
+  const lines = csvText.trim().split('\n');
+  if (lines.length < 2) return [];
+
+  return lines.slice(1).map(line => {
+    const cols = line.split(',');
+    return {
+      rank: parseInt(cols[0], 10) || 0,
+      club: cols[1]?.trim() ?? '',
+      country: cols[2]?.trim() ?? '',
+      level: parseInt(cols[3], 10),
+      elo: parseFloat(cols[4]),
+      from: cols[5]?.trim() ?? '',
+      to: cols[6]?.trim() ?? '',
+      date: '', // API CSV doesn't have a date column
+    };
+  }).filter(row => row.club !== '' && !isNaN(row.elo));
+}
+
+// ─── Data Source: ClubElo API ────────────────────────────────────────
+
+interface ApiData {
+  source: 'api';
+  topFlight: ClubEloRow[];
+  allHistory: Map<string, ClubEloRow[]>;
+  snapshotDate: string;
+}
+
+/**
+ * Fetch all data from the ClubElo API (direct).
+ * - Fetches today's ranking to get the full team list
+ * - Fetches per-team history for the top 30 teams
+ */
+function fetchFromApi(): ApiData | null {
+  const today = dateStr(new Date());
+  console.log(`  Trying ClubElo API for date: ${today}...`);
+
+  // Fetch today's ranking
+  const rankingCsv = fetchDailyRanking(today);
+  if (!rankingCsv) {
+    // Try yesterday
+    const yesterday = dateStr(addDays(new Date(), -1));
+    console.log(`  Today not available, trying ${yesterday}...`);
+    const yesterdayCsv = fetchDailyRanking(yesterday);
+    if (!yesterdayCsv) {
+      console.log('  ClubElo API daily ranking unavailable.');
+      return null;
+    }
+    return processApiRanking(yesterdayCsv, yesterday);
+  }
+
+  return processApiRanking(rankingCsv, today);
+}
+
+function processApiRanking(rankingCsv: string, snapshotDate: string): ApiData | null {
+  const allRanked = parseApiCsv(rankingCsv);
+  const topFlight = filterTopFlight(allRanked);
+  topFlight.sort((a, b) => b.elo - a.elo);
+
+  if (topFlight.length < 20) {
+    console.log(`  Only ${topFlight.length} top-flight teams found — seems incomplete.`);
+    return null;
+  }
+
+  console.log(`  API ranking: ${topFlight.length} top-flight teams`);
+
+  // Fetch history for top 30
+  const top30 = topFlight.slice(0, 30);
+  const allHistory = new Map<string, ClubEloRow[]>();
+
+  console.log(`  Fetching history for top 30 teams from API...`);
+  for (const team of top30) {
+    const csv = fetchClubHistory(team.club);
+    if (csv) {
+      const rows = parseApiCsv(csv);
+      allHistory.set(team.club, rows);
+      console.log(`    ${team.club.padEnd(20)} ${rows.length} periods`);
+    } else {
+      console.log(`    ${team.club.padEnd(20)} FAILED — will use mirror data`);
+    }
+  }
+
+  return { source: 'api', topFlight, allHistory, snapshotDate };
+}
+
+// ─── Data Source: GitHub Mirror ──────────────────────────────────────
+
+interface MirrorData {
+  source: 'mirror';
+  topFlight: ClubEloRow[];
+  allRows: ClubEloRow[];
+  snapshotDate: string;
+}
+
+function fetchFromMirror(): MirrorData {
+  console.log('  Falling back to GitHub mirror...');
+  downloadFullDataset();
+  const csvText = readCachedDataset();
+  const allRows = parseClubEloCsv(csvText);
+  console.log(`  Parsed ${allRows.length} total rows`);
+
+  // Find the latest snapshot date
+  const uniqueDates = [...new Set(allRows.map(r => r.date))].filter(d => d).sort();
+  const snapshotDate = uniqueDates[uniqueDates.length - 1];
+  console.log(`  Latest snapshot date: ${snapshotDate}`);
+  console.log(`  Date range: ${uniqueDates[0]} to ${snapshotDate}`);
+
+  // Get latest snapshot, filter to top-flight
+  const latestRows = allRows.filter(r => r.date === snapshotDate);
+  const topFlight = filterTopFlight(latestRows);
+  topFlight.sort((a, b) => b.elo - a.elo);
+
+  console.log(`  Top-flight teams: ${topFlight.length}`);
+
+  return { source: 'mirror', topFlight, allRows, snapshotDate };
+}
+
 // ─── Main Pipeline ────────────────────────────────────────────────────
 
 async function main() {
@@ -167,31 +294,48 @@ async function main() {
   console.log('═══════════════════════════════════════════════════════');
   console.log('');
 
-  // ── Step 1: Download combined dataset ──────────────────────────────
-  console.log('Step 1: Downloading ClubElo dataset...');
-  downloadFullDataset();
-  const csvText = readCachedDataset();
-  const allRows = parseClubEloCsv(csvText);
-  console.log(`  Parsed ${allRows.length} total rows`);
+  // ── Step 1: Check API availability ──────────────────────────────
+  console.log('Step 1: Checking ClubElo API...');
+  const apiAvailable = isClubEloApiAvailable();
+  console.log(`  ClubElo API: ${apiAvailable ? 'AVAILABLE' : 'DOWN'}`);
 
-  // ── Step 2: Find latest snapshot, filter top-flight ────────────────
+  // ── Step 2: Fetch data ──────────────────────────────────────────
   console.log('');
-  console.log('Step 2: Extracting latest snapshot...');
+  console.log('Step 2: Fetching data...');
 
-  // Find the latest snapshot date in the dataset
-  const uniqueDates = [...new Set(allRows.map(r => r.date))].filter(d => d).sort();
-  const latestDate = uniqueDates[uniqueDates.length - 1];
-  console.log(`  Latest snapshot date: ${latestDate}`);
-  console.log(`  Date range in dataset: ${uniqueDates[0]} to ${latestDate}`);
+  let topFlight: ClubEloRow[];
+  let snapshotDate: string;
+  let dataSource: string;
 
-  // Get latest snapshot rows, filter to top-flight
-  const latestRows = allRows.filter(r => r.date === latestDate);
-  const topFlight = filterTopFlight(latestRows);
-  topFlight.sort((a, b) => b.elo - a.elo);
+  // For history building we need either API history or mirror allRows
+  let apiHistory: Map<string, ClubEloRow[]> | null = null;
+  let mirrorAllRows: ClubEloRow[] | null = null;
 
-  console.log(`  Top-flight teams: ${topFlight.length} (Level 1, 5 leagues)`);
+  if (apiAvailable) {
+    const apiData = fetchFromApi();
+    if (apiData) {
+      topFlight = apiData.topFlight;
+      snapshotDate = apiData.snapshotDate;
+      apiHistory = apiData.allHistory;
+      dataSource = 'ClubElo API (api.clubelo.com)';
+    } else {
+      // API responded but data was bad — fall back
+      console.log('  API data incomplete — falling back to mirror.');
+      const mirrorData = fetchFromMirror();
+      topFlight = mirrorData.topFlight;
+      snapshotDate = mirrorData.snapshotDate;
+      mirrorAllRows = mirrorData.allRows;
+      dataSource = 'GitHub mirror (API data incomplete)';
+    }
+  } else {
+    const mirrorData = fetchFromMirror();
+    topFlight = mirrorData.topFlight;
+    snapshotDate = mirrorData.snapshotDate;
+    mirrorAllRows = mirrorData.allRows;
+    dataSource = 'GitHub mirror (API down)';
+  }
 
-  // ── Step 3: Build team registry ────────────────────────────────────
+  // ── Step 3: Build team registry ────────────────────────────────
   console.log('');
   console.log('Step 3: Building team registry...');
 
@@ -208,18 +352,36 @@ async function main() {
   writeJSON(path.join(DATA_DIR, 'teams.json'), teams);
   console.log(`  Written: data/teams.json (${teams.length} teams)`);
 
-  // ── Step 4: Extract history for top 30 from combined dataset ───────
+  // ── Step 4: Build history for top 30 ───────────────────────────
   console.log('');
-  console.log('Step 4: Extracting history for top 30 teams...');
+  console.log('Step 4: Building history for top 30 teams...');
 
   const top30 = topFlight.slice(0, 30);
   const historyStart = new Date('2024-01-01');
-  const historyEnd = new Date(latestDate);
+  const historyEnd = new Date(snapshotDate);
 
   const tsiHistory: Record<string, HistoryPoint[]> = {};
 
   for (const team of top30) {
-    const teamPeriods = extractTeamHistory(allRows, team.club);
+    let teamPeriods: ClubEloRow[];
+
+    if (apiHistory && apiHistory.has(team.club)) {
+      // Use API-fetched history
+      teamPeriods = apiHistory.get(team.club)!;
+    } else if (mirrorAllRows) {
+      // Use mirror history
+      teamPeriods = extractTeamHistory(mirrorAllRows, team.club);
+    } else {
+      // API mode but this specific team failed — try fetching from API one more time
+      const csv = fetchClubHistory(team.club);
+      if (csv) {
+        teamPeriods = parseApiCsv(csv);
+      } else {
+        console.log(`    ${team.club.padEnd(20)} NO DATA AVAILABLE`);
+        continue;
+      }
+    }
+
     const daily = buildDailyHistory(teamPeriods, historyStart, historyEnd);
     const stableId = toStableId(team.club);
 
@@ -229,7 +391,7 @@ async function main() {
     }
   }
 
-  // ── Step 5: Write history ──────────────────────────────────────────
+  // ── Step 5: Write history ──────────────────────────────────────
   console.log('');
   console.log('Step 5: Writing history...');
 
@@ -241,11 +403,11 @@ async function main() {
     : 0;
   console.log(`  Written: data/tsi_history.json (${historyTeamCount} teams, ~${avgPoints} days each)`);
 
-  // ── Step 6: Generate current snapshot ──────────────────────────────
+  // ── Step 6: Generate current snapshot ──────────────────────────
   console.log('');
   console.log('Step 6: Generating current snapshot...');
 
-  const sevenDaysAgo = dateStr(addDays(new Date(latestDate), -7));
+  const sevenDaysAgo = dateStr(addDays(new Date(snapshotDate), -7));
 
   const currentEntries: CurrentEntry[] = topFlight.map((row, idx) => {
     const elo = row.elo;
@@ -286,12 +448,12 @@ async function main() {
   writeJSON(path.join(DATA_DIR, 'tsi_current.json'), currentEntries);
   console.log(`  Written: data/tsi_current.json (${currentEntries.length} teams, ranked)`);
 
-  // ── Step 7: Generate top 10 ────────────────────────────────────────
+  // ── Step 7: Generate top 10 ────────────────────────────────────
   const top10 = currentEntries.slice(0, 10);
   writeJSON(path.join(DATA_DIR, 'top10.json'), top10);
   console.log(`  Written: data/top10.json`);
 
-  // ── Step 8: Validate ───────────────────────────────────────────────
+  // ── Step 8: Validate ───────────────────────────────────────────
   console.log('');
   console.log('Step 8: Running validation...');
   const validationErrors = validate(currentEntries, tsiHistory);
@@ -305,8 +467,8 @@ async function main() {
     }
   }
 
-  // ── Step 9: Print summary ──────────────────────────────────────────
-  printSummary(latestDate, topFlight.length, historyTeamCount, top10);
+  // ── Step 9: Print summary ──────────────────────────────────────
+  printSummary(dataSource, snapshotDate, topFlight.length, historyTeamCount, top10);
 }
 
 // ─── Validation ───────────────────────────────────────────────────────
@@ -356,7 +518,6 @@ function validate(
   }
 
   // Check 5: Bottom team TSI Display > 50
-  // (Some Level-1 teams in ClubElo are recently promoted/relegated with low Elo)
   if (current.length > 0) {
     const bottom = current[current.length - 1];
     if (bottom.tsiDisplay <= 50) {
@@ -367,8 +528,6 @@ function validate(
   }
 
   // Check 6: 7d changes are small (< 3% for most teams)
-  // With real data, sigmoid mapping amplifies percentage changes for mid-range teams,
-  // so we allow up to 15% of teams to exceed the 3% threshold.
   const bigChanges = current.filter(c => Math.abs(c.changePercent7d) > 3);
   if (bigChanges.length > current.length * 0.15) {
     errors.push(
@@ -399,6 +558,7 @@ function validate(
 // ─── Summary Output ───────────────────────────────────────────────────
 
 function printSummary(
+  dataSource: string,
   date: string,
   teamCount: number,
   historyTeamCount: number,
@@ -409,7 +569,7 @@ function printSummary(
   console.log('  TSI Oracle — ClubElo Seed Complete');
   console.log('═══════════════════════════════════════════════════════');
   console.log('');
-  console.log(`  Source: ClubElo via GitHub mirror (tonyelhabr/club-rankings)`);
+  console.log(`  Source: ${dataSource}`);
   console.log(`  Snapshot date: ${date}`);
   console.log(`  Teams loaded: ${teamCount} (5 leagues, Level 1)`);
   console.log(`  History range: 2024-01-01 to ${date}`);
@@ -437,10 +597,10 @@ function printSummary(
   console.log('  T1 adjustments (injuries, transfers) not applied yet.');
   console.log('');
   console.log('  Files written:');
-  console.log(`  ✓ data/teams.json (${teamCount} teams)`);
-  console.log(`  ✓ data/tsi_current.json (${teamCount} teams, ranked)`);
-  console.log(`  ✓ data/tsi_history.json (${historyTeamCount} teams, daily since 2024-01-01)`);
-  console.log('  ✓ data/top10.json');
+  console.log(`  + data/teams.json (${teamCount} teams)`);
+  console.log(`  + data/tsi_current.json (${teamCount} teams, ranked)`);
+  console.log(`  + data/tsi_history.json (${historyTeamCount} teams, daily since 2024-01-01)`);
+  console.log('  + data/top10.json');
   console.log('');
 }
 
