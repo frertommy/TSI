@@ -9,7 +9,9 @@
     "lint": "eslint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "seed": "npx tsx scripts/seed.ts",
+    "seed": "npx tsx scripts/seedClubElo.ts",
+    "seed:clubelo": "npx tsx scripts/seedClubElo.ts",
+    "seed:legacy": "npx tsx scripts/seed.ts",
     "seed:fetch-only": "npx tsx scripts/fetchMatches.ts",
     "validate": "npx tsx scripts/validate.ts"
   },
