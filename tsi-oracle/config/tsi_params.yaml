@@ -1,0 +1,63 @@
+T0:
+  K_base: 20
+  H_home_adv: 65
+  w_comp:
+    league: 1.00
+    ucl: 1.20
+    uel: 1.10
+    uecl: 1.00
+    domestic_cup: 0.85
+    supercup: 0.60
+  margin:
+    enabled: true
+    alpha: 1.5
+    cap_goals: 2
+
+T1:
+  injuries:
+    beta: 18
+    status_u:
+      out: 1.00
+      injured: 1.00
+      suspended: 0.85
+      doubtful: 0.40
+      questionable: 0.25
+      probable: 0.10
+      unknown: 0.50
+    position_r:
+      GK: 1.15
+      CB: 1.10
+      DM: 1.05
+      ST: 1.08
+      other: 1.00
+    duration_d:
+      lt7: 1.00
+      d7_21: 1.10
+      d22_60: 1.25
+      gt60: 1.40
+      missing: 1.15
+
+  transfers:
+    gamma: 22
+    tau_days:
+      permanent: 30
+      loan: 14
+
+  manager:
+    lambda_days: 45
+    tier_delta:
+      elite: 20
+      good: 10
+      neutral: 0
+      risky: -5
+      bad: -15
+
+  fatigue:
+    phi: 2.0
+    psi: 3.0
+
+Mapping:
+  mu: 1850
+  s: 120
+  display_min: 10
+  display_max: 1000
