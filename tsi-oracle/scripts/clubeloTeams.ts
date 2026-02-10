@@ -1,9 +1,12 @@
 /**
  * ClubElo team name mappings and league filtering.
  *
- * ClubElo uses camelCase-ish names (e.g. "ManCity"). This module
- * provides display-name mappings and league metadata for the
+ * ClubElo uses short names with spaces (e.g. "Man City", "Real Madrid").
+ * This module provides display-name mappings and league metadata for the
  * five top-flight European leagues we track.
+ *
+ * Data source: GitHub mirror of ClubElo
+ * (tonyelhabr/club-rankings release: clubelo-club-rankings.csv)
  */
 
 /** Countries (ClubElo 3-letter codes) we include, all Level 1 */
@@ -22,111 +25,113 @@ export const LEAGUE_NAMES: Record<ClubEloCountry, string> = {
 
 /**
  * Display name overrides for ClubElo club names.
- * Any club NOT listed here gets an auto-generated name
- * (spaces inserted before capitals).
+ * ClubElo uses short names like "Man City" — we map to full names
+ * for the frontend. Any club NOT listed here keeps its ClubElo name.
  */
 export const DISPLAY_NAMES: Record<string, string> = {
   // England
-  ManCity: 'Manchester City',
-  ManUnited: 'Manchester United',
-  TottenhamHotspur: 'Tottenham Hotspur',
-  NewcastleUtd: 'Newcastle United',
-  NottinghamForest: 'Nottingham Forest',
-  WestHam: 'West Ham United',
-  LeicesterCity: 'Leicester City',
-  CrystalPalace: 'Crystal Palace',
-  IpswichTown: 'Ipswich Town',
-  WolverhamptonWanderers: 'Wolverhampton Wanderers',
+  'Man City': 'Manchester City',
+  'Man United': 'Manchester United',
+  'Tottenham': 'Tottenham Hotspur',
+  'Newcastle': 'Newcastle United',
+  'Forest': 'Nottingham Forest',
+  'West Ham': 'West Ham United',
+  'Crystal Palace': 'Crystal Palace',
+  'Wolves': 'Wolverhampton Wanderers',
+  'Leeds': 'Leeds United',
+  'Burnley': 'Burnley FC',
+  'Sunderland': 'Sunderland AFC',
 
   // Spain
-  RealMadrid: 'Real Madrid',
-  AtleticoMadrid: 'Atlético Madrid',
-  RealSociedad: 'Real Sociedad',
-  AthleticClub: 'Athletic Club',
-  RealBetis: 'Real Betis',
-  CeltaVigo: 'Celta Vigo',
-  RealValladolid: 'Real Valladolid',
-  RayoVallecano: 'Rayo Vallecano',
-  LasPalmas: 'Las Palmas',
-  DeportivoAlaves: 'Deportivo Alavés',
-  EspanyolBarcelona: 'Espanyol',
+  'Real Madrid': 'Real Madrid',
+  'Atletico': 'Atlético Madrid',
+  'Sociedad': 'Real Sociedad',
+  'Bilbao': 'Athletic Club',
+  'Betis': 'Real Betis',
+  'Celta': 'Celta Vigo',
+  'Rayo Vallecano': 'Rayo Vallecano',
+  'Espanyol': 'Espanyol',
+  'Oviedo': 'Real Oviedo',
+  'Elche': 'Elche CF',
+  'Levante': 'Levante UD',
 
   // Germany
-  BayernMunich: 'Bayern Munich',
-  BorussiaDortmund: 'Borussia Dortmund',
-  RBLeipzig: 'RB Leipzig',
-  Leverkusen: 'Bayer Leverkusen',
-  BorussiaMowordhenchengladbach: 'Borussia Mönchengladbach',
-  Moenchengladbach: 'Borussia Mönchengladbach',
-  Frankfurt: 'Eintracht Frankfurt',
-  Wolfsburg: 'VfL Wolfsburg',
-  Freiburg: 'SC Freiburg',
-  Hoffenheim: 'TSG Hoffenheim',
-  Mainz: '1. FSV Mainz 05',
-  Augsburg: 'FC Augsburg',
-  Heidenheim: '1. FC Heidenheim',
-  StPauli: 'FC St. Pauli',
-  Holstein: 'Holstein Kiel',
-  UnionBerlin: 'Union Berlin',
-  WerderBremen: 'Werder Bremen',
-  BochumVfL: 'VfL Bochum',
+  'Bayern': 'Bayern Munich',
+  'Dortmund': 'Borussia Dortmund',
+  'RB Leipzig': 'RB Leipzig',
+  'Leverkusen': 'Bayer Leverkusen',
+  'Gladbach': 'Borussia Mönchengladbach',
+  'Frankfurt': 'Eintracht Frankfurt',
+  'Wolfsburg': 'VfL Wolfsburg',
+  'Freiburg': 'SC Freiburg',
+  'Hoffenheim': 'TSG Hoffenheim',
+  'Mainz': '1. FSV Mainz 05',
+  'Augsburg': 'FC Augsburg',
+  'Heidenheim': '1. FC Heidenheim',
+  'St Pauli': 'FC St. Pauli',
+  'Union Berlin': 'Union Berlin',
+  'Werder': 'Werder Bremen',
+  'Koeln': 'FC Köln',
+  'Hamburg': 'Hamburger SV',
 
   // Italy
-  Inter: 'Inter Milan',
-  Milan: 'AC Milan',
-  Napoli: 'SSC Napoli',
-  Atalanta: 'Atalanta',
-  Roma: 'AS Roma',
-  Lazio: 'SS Lazio',
-  Juventus: 'Juventus',
-  Fiorentina: 'ACF Fiorentina',
-  Bologna: 'Bologna FC',
-  Torino: 'Torino FC',
-  Udinese: 'Udinese',
-  Genoa: 'Genoa CFC',
-  Cagliari: 'Cagliari',
-  Parma: 'Parma Calcio',
-  Empoli: 'Empoli FC',
-  Venezia: 'Venezia FC',
-  Como: 'Como 1907',
-  Verona: 'Hellas Verona',
-  Lecce: 'US Lecce',
-  Monza: 'AC Monza',
+  'Inter': 'Inter Milan',
+  'Milan': 'AC Milan',
+  'Napoli': 'SSC Napoli',
+  'Roma': 'AS Roma',
+  'Lazio': 'SS Lazio',
+  'Fiorentina': 'ACF Fiorentina',
+  'Bologna': 'Bologna FC',
+  'Torino': 'Torino FC',
+  'Genoa': 'Genoa CFC',
+  'Cagliari': 'Cagliari Calcio',
+  'Parma': 'Parma Calcio',
+  'Verona': 'Hellas Verona',
+  'Lecce': 'US Lecce',
+  'Como': 'Como 1907',
+  'Cremonese': 'US Cremonese',
+  'Pisa': 'Pisa SC',
+  'Sassuolo': 'US Sassuolo',
 
   // France
-  PSG: 'Paris Saint-Germain',
-  Monaco: 'AS Monaco',
-  Marseille: 'Olympique Marseille',
-  Lille: 'LOSC Lille',
-  Lyon: 'Olympique Lyonnais',
-  Nice: 'OGC Nice',
-  Lens: 'RC Lens',
-  Rennes: 'Stade Rennais',
-  Strasbourg: 'RC Strasbourg',
-  Toulouse: 'Toulouse FC',
-  Nantes: 'FC Nantes',
-  Reims: 'Stade de Reims',
-  Montpellier: 'Montpellier HSC',
-  Brest: 'Stade Brestois',
-  LeHavre: 'Le Havre AC',
-  Auxerre: 'AJ Auxerre',
-  Angers: 'Angers SCO',
-  SaintEtienne: 'AS Saint-Étienne',
+  'Paris SG': 'Paris Saint-Germain',
+  'Monaco': 'AS Monaco',
+  'Marseille': 'Olympique Marseille',
+  'Lille': 'LOSC Lille',
+  'Lyon': 'Olympique Lyonnais',
+  'Nice': 'OGC Nice',
+  'Lens': 'RC Lens',
+  'Rennes': 'Stade Rennais',
+  'Strasbourg': 'RC Strasbourg',
+  'Toulouse': 'Toulouse FC',
+  'Nantes': 'FC Nantes',
+  'Brest': 'Stade Brestois',
+  'Le Havre': 'Le Havre AC',
+  'Auxerre': 'AJ Auxerre',
+  'Angers': 'Angers SCO',
+  'Lorient': 'FC Lorient',
+  'Metz': 'FC Metz',
+  'Paris FC': 'Paris FC',
 };
 
 /**
  * Get display name for a ClubElo club name.
- * Falls back to inserting spaces before uppercase letters.
+ * Falls back to the ClubElo name if not in our mapping.
  */
 export function getDisplayName(clubeloName: string): string {
-  if (DISPLAY_NAMES[clubeloName]) {
-    return DISPLAY_NAMES[clubeloName];
-  }
-  // Fallback: insert space before each capital letter (except the first)
-  return clubeloName.replace(/([a-z])([A-Z])/g, '$1 $2');
+  return DISPLAY_NAMES[clubeloName] ?? clubeloName;
 }
 
-/** Parsed row from the ClubElo CSV snapshot */
+/**
+ * Create a stable ID from a ClubElo name.
+ * Removes spaces and special chars to get a URL-safe, join-key-friendly ID.
+ * e.g. "Man City" → "ManCity", "Real Madrid" → "RealMadrid", "St Pauli" → "StPauli"
+ */
+export function toStableId(clubeloName: string): string {
+  return clubeloName.replace(/\s+/g, '');
+}
+
+/** Parsed row from the ClubElo CSV */
 export interface ClubEloRow {
   rank: number;
   club: string;
@@ -135,11 +140,17 @@ export interface ClubEloRow {
   elo: number;
   from: string;
   to: string;
+  date: string;
 }
 
 /**
- * Parse ClubElo CSV text into structured rows.
- * CSV columns: Rank,Club,Country,Level,Elo,From,To
+ * Parse the combined ClubElo CSV text (GitHub mirror format) into structured rows.
+ * CSV columns: Rank,Club,Country,Level,Elo,From,To,date,updated_at
+ *
+ * Handles the quirks of this dataset:
+ * - Rank can be float ("1.0") or empty
+ * - Club names contain spaces ("Man City", "Real Madrid")
+ * - Two extra trailing columns (date, updated_at)
  */
 export function parseClubEloCsv(csvText: string): ClubEloRow[] {
   const lines = csvText.trim().split('\n');
@@ -149,13 +160,14 @@ export function parseClubEloCsv(csvText: string): ClubEloRow[] {
   return lines.slice(1).map(line => {
     const cols = line.split(',');
     return {
-      rank: parseInt(cols[0], 10),
+      rank: parseInt(cols[0], 10) || 0,
       club: cols[1]?.trim() ?? '',
       country: cols[2]?.trim() ?? '',
       level: parseInt(cols[3], 10),
       elo: parseFloat(cols[4]),
       from: cols[5]?.trim() ?? '',
       to: cols[6]?.trim() ?? '',
+      date: cols[7]?.trim() ?? '',
     };
   }).filter(row => row.club !== '' && !isNaN(row.elo));
 }
