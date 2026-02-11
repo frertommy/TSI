@@ -1,0 +1,386 @@
+{
+  "ManCity": {
+    "optaRating": 97.5,
+    "optaRank": 3
+  },
+  "RealMadrid": {
+    "optaRating": 93.6,
+    "optaRank": 9
+  },
+  "Inter": {
+    "optaRating": 93.7,
+    "optaRank": 8
+  },
+  "Liverpool": {
+    "optaRating": 95,
+    "optaRank": 7
+  },
+  "Arsenal": {
+    "optaRating": 100,
+    "optaRank": 1
+  },
+  "ParisSG": {
+    "optaRating": 99.1,
+    "optaRank": 2
+  },
+  "Bayern": {
+    "optaRating": 98.1,
+    "optaRank": 2
+  },
+  "Leverkusen": {
+    "optaRating": 90.9,
+    "optaRank": 17
+  },
+  "Atletico": {
+    "optaRating": 92.8,
+    "optaRank": 16
+  },
+  "Barcelona": {
+    "optaRating": 96,
+    "optaRank": 4
+  },
+  "Dortmund": {
+    "optaRating": 92.5,
+    "optaRank": 12
+  },
+  "Juventus": {
+    "optaRating": 90.2,
+    "optaRank": 20
+  },
+  "Milan": {
+    "optaRating": 90.1,
+    "optaRank": 23
+  },
+  "AstonVilla": {
+    "optaRating": 95.4,
+    "optaRank": 6
+  },
+  "Tottenham": {
+    "optaRating": 90.1,
+    "optaRank": 24
+  },
+  "Atalanta": {
+    "optaRating": 90,
+    "optaRank": 25
+  },
+  "ManUnited": {
+    "optaRating": 90.5,
+    "optaRank": 18
+  },
+  "Sociedad": {
+    "optaRating": 83.1,
+    "optaRank": 78
+  },
+  "RBLeipzig": {
+    "optaRating": 88.2,
+    "optaRank": 33
+  },
+  "Brighton": {
+    "optaRating": 92,
+    "optaRank": 14
+  },
+  "Newcastle": {
+    "optaRating": 92.9,
+    "optaRank": 11
+  },
+  "Napoli": {
+    "optaRating": 91.2,
+    "optaRank": 16
+  },
+  "Bilbao": {
+    "optaRating": 84.9,
+    "optaRank": 64
+  },
+  "Girona": {
+    "optaRating": 80.7,
+    "optaRank": 134
+  },
+  "Chelsea": {
+    "optaRating": 93.3,
+    "optaRank": 10
+  },
+  "Lazio": {
+    "optaRating": 86.9,
+    "optaRank": 46
+  },
+  "Lens": {
+    "optaRating": 88.1,
+    "optaRank": 34
+  },
+  "Roma": {
+    "optaRating": 89.5,
+    "optaRank": 29
+  },
+  "Bologna": {
+    "optaRating": 86.8,
+    "optaRank": 47
+  },
+  "WestHam": {
+    "optaRating": 85,
+    "optaRank": 63
+  },
+  "Stuttgart": {
+    "optaRating": 88.9,
+    "optaRank": 31
+  },
+  "Lille": {
+    "optaRating": 86.6,
+    "optaRank": 48
+  },
+  "Wolves": {
+    "optaRating": 83.8,
+    "optaRank": 67
+  },
+  "Rennes": {
+    "optaRating": 85.5,
+    "optaRank": 55
+  },
+  "Brentford": {
+    "optaRating": 91.6,
+    "optaRank": 15
+  },
+  "Fiorentina": {
+    "optaRating": 82.9,
+    "optaRank": 81
+  },
+  "Marseille": {
+    "optaRating": 88,
+    "optaRank": 35
+  },
+  "Nice": {
+    "optaRating": 80.7,
+    "optaRank": 130
+  },
+  "Monaco": {
+    "optaRating": 85.6,
+    "optaRank": 54
+  },
+  "Betis": {
+    "optaRating": 87.2,
+    "optaRank": 39
+  },
+  "Torino": {
+    "optaRating": 83.3,
+    "optaRank": 73
+  },
+  "Everton": {
+    "optaRating": 89,
+    "optaRank": 30
+  },
+  "Fulham": {
+    "optaRating": 89.8,
+    "optaRank": 28
+  },
+  "Bournemouth": {
+    "optaRating": 89.8,
+    "optaRank": 27
+  },
+  "Frankfurt": {
+    "optaRating": 86.6,
+    "optaRank": 49
+  },
+  "Brest": {
+    "optaRating": 83.2,
+    "optaRank": 74
+  },
+  "Villarreal": {
+    "optaRating": 88,
+    "optaRank": 37
+  },
+  "CrystalPalace": {
+    "optaRating": 90.2,
+    "optaRank": 22
+  },
+  "Valencia": {
+    "optaRating": 82,
+    "optaRank": 94
+  },
+  "Freiburg": {
+    "optaRating": 86.5,
+    "optaRank": 50
+  },
+  "Sevilla": {
+    "optaRating": 80.8,
+    "optaRank": 127
+  },
+  "Getafe": {
+    "optaRating": 80.7,
+    "optaRank": 133
+  },
+  "Forest": {
+    "optaRating": 87.8,
+    "optaRank": 38
+  },
+  "Lyon": {
+    "optaRating": 88,
+    "optaRank": 36
+  },
+  "Wolfsburg": {
+    "optaRating": 82.4,
+    "optaRank": 90
+  },
+  "UnionBerlin": {
+    "optaRating": 82.8,
+    "optaRank": 84
+  },
+  "Leeds": {
+    "optaRating": 87,
+    "optaRank": 43
+  },
+  "Osasuna": {
+    "optaRating": 82.8,
+    "optaRank": 85
+  },
+  "Gladbach": {
+    "optaRating": 82.8,
+    "optaRank": 87
+  },
+  "Udinese": {
+    "optaRating": 81.7,
+    "optaRank": 101
+  },
+  "Werder": {
+    "optaRating": 83.3,
+    "optaRank": 72
+  },
+  "Hoffenheim": {
+    "optaRating": 85.3,
+    "optaRank": 60
+  },
+  "Mallorca": {
+    "optaRating": 81.5,
+    "optaRank": 108
+  },
+  "Celta": {
+    "optaRating": 85.3,
+    "optaRank": 58
+  },
+  "RayoVallecano": {
+    "optaRating": 83.1,
+    "optaRank": 80
+  },
+  "Alaves": {
+    "optaRating": 84.1,
+    "optaRank": 91
+  },
+  "Strasbourg": {
+    "optaRating": 85.2,
+    "optaRank": 61
+  },
+  "Toulouse": {
+    "optaRating": 83.1,
+    "optaRank": 77
+  },
+  "Genoa": {
+    "optaRating": 81.6,
+    "optaRank": 105
+  },
+  "Heidenheim": {
+    "optaRating": 78.6,
+    "optaRank": 215
+  },
+  "Sassuolo": {
+    "optaRating": 81.3,
+    "optaRank": 111
+  },
+  "Burnley": {
+    "optaRating": 84,
+    "optaRank": 66
+  },
+  "Augsburg": {
+    "optaRating": 81.2,
+    "optaRank": 113
+  },
+  "Koeln": {
+    "optaRating": 80.8,
+    "optaRank": 129
+  },
+  "Mainz": {
+    "optaRating": 83.1,
+    "optaRank": 79
+  },
+  "Lecce": {
+    "optaRating": 78.9,
+    "optaRank": 204
+  },
+  "Lorient": {
+    "optaRating": 79.8,
+    "optaRank": 162
+  },
+  "StPauli": {
+    "optaRating": 79.4,
+    "optaRank": 181
+  },
+  "Verona": {
+    "optaRating": 79.2,
+    "optaRank": 194
+  },
+  "Nantes": {
+    "optaRating": 79.5,
+    "optaRank": 179
+  },
+  "LeHavre": {
+    "optaRating": 78.8,
+    "optaRank": 210
+  },
+  "Hamburg": {
+    "optaRating": 80.5,
+    "optaRank": 144
+  },
+  "Oviedo": {
+    "optaRating": 78.6,
+    "optaRank": 214
+  },
+  "Parma": {
+    "optaRating": 80.9,
+    "optaRank": 121
+  },
+  "Levante": {
+    "optaRating": 80.4,
+    "optaRank": 145
+  },
+  "Espanyol": {
+    "optaRating": 83.8,
+    "optaRank": 68
+  },
+  "Cagliari": {
+    "optaRating": 80.6,
+    "optaRank": 140
+  },
+  "Auxerre": {
+    "optaRating": 79.3,
+    "optaRank": 190
+  },
+  "Sunderland": {
+    "optaRating": 87.1,
+    "optaRank": 40
+  },
+  "Elche": {
+    "optaRating": 81.3,
+    "optaRank": 110
+  },
+  "Metz": {
+    "optaRating": 77.4,
+    "optaRank": 273
+  },
+  "Cremonese": {
+    "optaRating": 81.1,
+    "optaRank": 116
+  },
+  "Angers": {
+    "optaRating": 80.2,
+    "optaRank": 151
+  },
+  "Como": {
+    "optaRating": 87,
+    "optaRank": 44
+  },
+  "ParisFC": {
+    "optaRating": 78.6,
+    "optaRank": 217
+  },
+  "Pisa": {
+    "optaRating": 79,
+    "optaRank": 200
+  }
+}

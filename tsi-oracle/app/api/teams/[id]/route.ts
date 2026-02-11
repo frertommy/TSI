@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
 
 interface HistoryRow {
   date: string;
@@ -18,6 +20,40 @@ interface TeamRow {
   change_7d: number;
   change_percent_7d: number;
   updated_at: string;
+}
+
+interface OptaHistoryPoint {
+  date: string;
+  optaRating: number;
+  optaRank: number;
+}
+
+// Load Opta history from JSON file (fallback when opta_daily table doesn't exist)
+let optaHistoryCache: Record<string, OptaHistoryPoint[]> | null = null;
+
+function loadOptaHistory(): Record<string, OptaHistoryPoint[]> {
+  if (optaHistoryCache) return optaHistoryCache;
+  try {
+    const filePath = resolve(process.cwd(), 'data', 'opta_history.json');
+    optaHistoryCache = JSON.parse(readFileSync(filePath, 'utf-8'));
+    return optaHistoryCache!;
+  } catch {
+    return {};
+  }
+}
+
+// Load Opta current from JSON file
+let optaCurrentCache: Record<string, { optaRating: number; optaRank: number }> | null = null;
+
+function loadOptaCurrent(): Record<string, { optaRating: number; optaRank: number }> {
+  if (optaCurrentCache) return optaCurrentCache;
+  try {
+    const filePath = resolve(process.cwd(), 'data', 'opta_current.json');
+    optaCurrentCache = JSON.parse(readFileSync(filePath, 'utf-8'));
+    return optaCurrentCache!;
+  } catch {
+    return {};
+  }
 }
 
 const CACHE_HEADERS = {
@@ -101,6 +137,32 @@ export async function GET(
       }
     }
 
+    // Fetch Opta history: try DB first, fall back to JSON file
+    let optaHistory: OptaHistoryPoint[] = [];
+    const { data: optaDbData, error: optaDbError } = await supabase
+      .from('opta_daily')
+      .select('date, opta_rating, opta_rank')
+      .eq('team_id', id)
+      .gte('date', sinceDateStr)
+      .order('date', { ascending: true });
+
+    if (!optaDbError && optaDbData && optaDbData.length > 0) {
+      optaHistory = optaDbData.map((r: { date: string; opta_rating: number; opta_rank: number }) => ({
+        date: r.date,
+        optaRating: Number(r.opta_rating),
+        optaRank: Number(r.opta_rank),
+      }));
+    } else {
+      // Fallback to JSON file
+      const allOpta = loadOptaHistory();
+      const teamOpta = allOpta[id] ?? [];
+      optaHistory = teamOpta.filter(p => p.date >= sinceDateStr);
+    }
+
+    // Get current Opta data
+    const optaCurrent = loadOptaCurrent();
+    const currentOpta = optaCurrent[id] ?? null;
+
     const response = {
       team: {
         id: team.id,
@@ -112,12 +174,15 @@ export async function GET(
         rank: Number(team.current_rank),
         change7d: Number(team.change_7d),
         changePercent7d: Number(team.change_percent_7d),
+        optaRating: currentOpta?.optaRating ?? null,
+        optaRank: currentOpta?.optaRank ?? null,
       },
       history: historyPoints.map(h => ({
         date: h.date,
         elo: h.elo,
         tsiDisplay: h.tsi_display,
       })),
+      optaHistory,
       stats: {
         peakElo: peakElo === 0 ? null : peakElo,
         peakDate: peakDate || null,
