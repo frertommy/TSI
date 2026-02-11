@@ -36,6 +36,11 @@ yarn-error.log*
 # cached API data
 data/raw/
 
+# large CSV source files (downloaded by seed scripts)
+data/opta-club-rankings.csv
+data/clubelo-club-rankings.csv
+data/compared-rankings.csv
+
 # vercel
 .vercel
 

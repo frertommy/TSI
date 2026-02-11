@@ -1,0 +1,482 @@
+[
+  {
+    "teamId": "Arsenal",
+    "clubeloName": "Arsenal",
+    "optaName": "Arsenal"
+  },
+  {
+    "teamId": "Bayern",
+    "clubeloName": "Bayern",
+    "optaName": "Bayern München"
+  },
+  {
+    "teamId": "ManCity",
+    "clubeloName": "Man City",
+    "optaName": "Manchester City"
+  },
+  {
+    "teamId": "ParisSG",
+    "clubeloName": "Paris SG",
+    "optaName": "PSG"
+  },
+  {
+    "teamId": "Barcelona",
+    "clubeloName": "Barcelona",
+    "optaName": "Barcelona"
+  },
+  {
+    "teamId": "Liverpool",
+    "clubeloName": "Liverpool",
+    "optaName": "Liverpool"
+  },
+  {
+    "teamId": "Inter",
+    "clubeloName": "Inter",
+    "optaName": "Internazionale"
+  },
+  {
+    "teamId": "AstonVilla",
+    "clubeloName": "Aston Villa",
+    "optaName": "Aston Villa"
+  },
+  {
+    "teamId": "RealMadrid",
+    "clubeloName": "Real Madrid",
+    "optaName": "Real Madrid"
+  },
+  {
+    "teamId": "Chelsea",
+    "clubeloName": "Chelsea",
+    "optaName": "Chelsea"
+  },
+  {
+    "teamId": "Newcastle",
+    "clubeloName": "Newcastle",
+    "optaName": "Newcastle United"
+  },
+  {
+    "teamId": "Atletico",
+    "clubeloName": "Atletico",
+    "optaName": "Atlético Madrid"
+  },
+  {
+    "teamId": "Dortmund",
+    "clubeloName": "Dortmund",
+    "optaName": "Borussia Dortmund"
+  },
+  {
+    "teamId": "Brentford",
+    "clubeloName": "Brentford",
+    "optaName": "Brentford"
+  },
+  {
+    "teamId": "Brighton",
+    "clubeloName": "Brighton",
+    "optaName": "Brighton & Hove Albion"
+  },
+  {
+    "teamId": "Leverkusen",
+    "clubeloName": "Leverkusen",
+    "optaName": "Bayer Leverkusen"
+  },
+  {
+    "teamId": "Napoli",
+    "clubeloName": "Napoli",
+    "optaName": "Napoli"
+  },
+  {
+    "teamId": "ManUnited",
+    "clubeloName": "Man United",
+    "optaName": "Manchester United"
+  },
+  {
+    "teamId": "Juventus",
+    "clubeloName": "Juventus",
+    "optaName": "Juventus"
+  },
+  {
+    "teamId": "Milan",
+    "clubeloName": "Milan",
+    "optaName": "Milan"
+  },
+  {
+    "teamId": "Atalanta",
+    "clubeloName": "Atalanta",
+    "optaName": "Atalanta"
+  },
+  {
+    "teamId": "Fulham",
+    "clubeloName": "Fulham",
+    "optaName": "Fulham"
+  },
+  {
+    "teamId": "Roma",
+    "clubeloName": "Roma",
+    "optaName": "Roma"
+  },
+  {
+    "teamId": "Tottenham",
+    "clubeloName": "Tottenham",
+    "optaName": "Tottenham Hotspur"
+  },
+  {
+    "teamId": "CrystalPalace",
+    "clubeloName": "Crystal Palace",
+    "optaName": "Crystal Palace"
+  },
+  {
+    "teamId": "Bournemouth",
+    "clubeloName": "Bournemouth",
+    "optaName": "AFC Bournemouth"
+  },
+  {
+    "teamId": "Everton",
+    "clubeloName": "Everton",
+    "optaName": "Everton"
+  },
+  {
+    "teamId": "Villarreal",
+    "clubeloName": "Villarreal",
+    "optaName": "Villarreal"
+  },
+  {
+    "teamId": "Forest",
+    "clubeloName": "Forest",
+    "optaName": "Nottingham Forest"
+  },
+  {
+    "teamId": "Lens",
+    "clubeloName": "Lens",
+    "optaName": "Lens"
+  },
+  {
+    "teamId": "Marseille",
+    "clubeloName": "Marseille",
+    "optaName": "Olympique Marseille"
+  },
+  {
+    "teamId": "Stuttgart",
+    "clubeloName": "Stuttgart",
+    "optaName": "Stuttgart"
+  },
+  {
+    "teamId": "RBLeipzig",
+    "clubeloName": "RB Leipzig",
+    "optaName": "RB Leipzig"
+  },
+  {
+    "teamId": "Lyon",
+    "clubeloName": "Lyon",
+    "optaName": "Olympique Lyonnais"
+  },
+  {
+    "teamId": "Betis",
+    "clubeloName": "Betis",
+    "optaName": "Real Betis"
+  },
+  {
+    "teamId": "Leeds",
+    "clubeloName": "Leeds",
+    "optaName": "Leeds United"
+  },
+  {
+    "teamId": "Lille",
+    "clubeloName": "Lille",
+    "optaName": "Lille"
+  },
+  {
+    "teamId": "Lazio",
+    "clubeloName": "Lazio",
+    "optaName": "Lazio"
+  },
+  {
+    "teamId": "Bologna",
+    "clubeloName": "Bologna",
+    "optaName": "Bologna"
+  },
+  {
+    "teamId": "Frankfurt",
+    "clubeloName": "Frankfurt",
+    "optaName": "Eintracht Frankfurt"
+  },
+  {
+    "teamId": "Freiburg",
+    "clubeloName": "Freiburg",
+    "optaName": "Freiburg"
+  },
+  {
+    "teamId": "Como",
+    "clubeloName": "Como",
+    "optaName": "Como"
+  },
+  {
+    "teamId": "Bilbao",
+    "clubeloName": "Bilbao",
+    "optaName": "Athletic Club"
+  },
+  {
+    "teamId": "Celta",
+    "clubeloName": "Celta",
+    "optaName": "Celta de Vigo"
+  },
+  {
+    "teamId": "Rennes",
+    "clubeloName": "Rennes",
+    "optaName": "Rennes"
+  },
+  {
+    "teamId": "Monaco",
+    "clubeloName": "Monaco",
+    "optaName": "Monaco"
+  },
+  {
+    "teamId": "WestHam",
+    "clubeloName": "West Ham",
+    "optaName": "West Ham United"
+  },
+  {
+    "teamId": "Strasbourg",
+    "clubeloName": "Strasbourg",
+    "optaName": "Strasbourg"
+  },
+  {
+    "teamId": "Hoffenheim",
+    "clubeloName": "Hoffenheim",
+    "optaName": "Hoffenheim"
+  },
+  {
+    "teamId": "Burnley",
+    "clubeloName": "Burnley",
+    "optaName": "Burnley"
+  },
+  {
+    "teamId": "Sunderland",
+    "clubeloName": "Sunderland",
+    "optaName": "Sunderland"
+  },
+  {
+    "teamId": "Espanyol",
+    "clubeloName": "Espanyol",
+    "optaName": "Espanyol"
+  },
+  {
+    "teamId": "Wolves",
+    "clubeloName": "Wolves",
+    "optaName": "Wolverhampton Wanderers"
+  },
+  {
+    "teamId": "Brest",
+    "clubeloName": "Brest",
+    "optaName": "Brest"
+  },
+  {
+    "teamId": "Werder",
+    "clubeloName": "Werder",
+    "optaName": "Werder Bremen"
+  },
+  {
+    "teamId": "Fiorentina",
+    "clubeloName": "Fiorentina",
+    "optaName": "Fiorentina"
+  },
+  {
+    "teamId": "Gladbach",
+    "clubeloName": "Gladbach",
+    "optaName": "Borussia M'gladbach"
+  },
+  {
+    "teamId": "Toulouse",
+    "clubeloName": "Toulouse",
+    "optaName": "Toulouse"
+  },
+  {
+    "teamId": "Mainz",
+    "clubeloName": "Mainz",
+    "optaName": "Mainz 05"
+  },
+  {
+    "teamId": "Sociedad",
+    "clubeloName": "Sociedad",
+    "optaName": "Real Sociedad"
+  },
+  {
+    "teamId": "Osasuna",
+    "clubeloName": "Osasuna",
+    "optaName": "Osasuna"
+  },
+  {
+    "teamId": "Torino",
+    "clubeloName": "Torino",
+    "optaName": "Torino"
+  },
+  {
+    "teamId": "UnionBerlin",
+    "clubeloName": "Union Berlin",
+    "optaName": "Union Berlin"
+  },
+  {
+    "teamId": "RayoVallecano",
+    "clubeloName": "Rayo Vallecano",
+    "optaName": "Rayo Vallecano"
+  },
+  {
+    "teamId": "Wolfsburg",
+    "clubeloName": "Wolfsburg",
+    "optaName": "Wolfsburg"
+  },
+  {
+    "teamId": "Valencia",
+    "clubeloName": "Valencia",
+    "optaName": "Valencia"
+  },
+  {
+    "teamId": "Genoa",
+    "clubeloName": "Genoa",
+    "optaName": "Genoa"
+  },
+  {
+    "teamId": "Udinese",
+    "clubeloName": "Udinese",
+    "optaName": "Udinese"
+  },
+  {
+    "teamId": "Mallorca",
+    "clubeloName": "Mallorca",
+    "optaName": "Mallorca"
+  },
+  {
+    "teamId": "Sassuolo",
+    "clubeloName": "Sassuolo",
+    "optaName": "Sassuolo"
+  },
+  {
+    "teamId": "Girona",
+    "clubeloName": "Girona",
+    "optaName": "Girona"
+  },
+  {
+    "teamId": "Elche",
+    "clubeloName": "Elche",
+    "optaName": "Elche"
+  },
+  {
+    "teamId": "Sevilla",
+    "clubeloName": "Sevilla",
+    "optaName": "Sevilla"
+  },
+  {
+    "teamId": "Alaves",
+    "clubeloName": "Alaves",
+    "optaName": "Deportivo Alavés"
+  },
+  {
+    "teamId": "Augsburg",
+    "clubeloName": "Augsburg",
+    "optaName": "Augsburg"
+  },
+  {
+    "teamId": "Getafe",
+    "clubeloName": "Getafe",
+    "optaName": "Getafe"
+  },
+  {
+    "teamId": "Nice",
+    "clubeloName": "Nice",
+    "optaName": "Nice"
+  },
+  {
+    "teamId": "Parma",
+    "clubeloName": "Parma",
+    "optaName": "Parma"
+  },
+  {
+    "teamId": "Lorient",
+    "clubeloName": "Lorient",
+    "optaName": "Lorient"
+  },
+  {
+    "teamId": "Cagliari",
+    "clubeloName": "Cagliari",
+    "optaName": "Cagliari"
+  },
+  {
+    "teamId": "Levante",
+    "clubeloName": "Levante",
+    "optaName": "Levante"
+  },
+  {
+    "teamId": "Koeln",
+    "clubeloName": "Koeln",
+    "optaName": "Köln"
+  },
+  {
+    "teamId": "Hamburg",
+    "clubeloName": "Hamburg",
+    "optaName": "Hamburger SV"
+  },
+  {
+    "teamId": "Cremonese",
+    "clubeloName": "Cremonese",
+    "optaName": "Cremonese"
+  },
+  {
+    "teamId": "Angers",
+    "clubeloName": "Angers",
+    "optaName": "Angers SCO"
+  },
+  {
+    "teamId": "Auxerre",
+    "clubeloName": "Auxerre",
+    "optaName": "Auxerre"
+  },
+  {
+    "teamId": "Verona",
+    "clubeloName": "Verona",
+    "optaName": "Hellas Verona"
+  },
+  {
+    "teamId": "StPauli",
+    "clubeloName": "St Pauli",
+    "optaName": "St. Pauli"
+  },
+  {
+    "teamId": "Nantes",
+    "clubeloName": "Nantes",
+    "optaName": "Nantes"
+  },
+  {
+    "teamId": "LeHavre",
+    "clubeloName": "Le Havre",
+    "optaName": "Le Havre"
+  },
+  {
+    "teamId": "Lecce",
+    "clubeloName": "Lecce",
+    "optaName": "Lecce"
+  },
+  {
+    "teamId": "Heidenheim",
+    "clubeloName": "Heidenheim",
+    "optaName": "Heidenheim"
+  },
+  {
+    "teamId": "Oviedo",
+    "clubeloName": "Oviedo",
+    "optaName": "Real Oviedo"
+  },
+  {
+    "teamId": "Metz",
+    "clubeloName": "Metz",
+    "optaName": "Metz"
+  },
+  {
+    "teamId": "ParisFC",
+    "clubeloName": "Paris FC",
+    "optaName": "Paris FC"
+  },
+  {
+    "teamId": "Pisa",
+    "clubeloName": "Pisa",
+    "optaName": "Pisa"
+  }
+]
